@@ -1873,6 +1873,7 @@ MonoBehaviour:
   _detectionRange: 10
   _moveSpeed: 4
   _rotationSpeed: 30
+  _isMoving: 0
 --- !u!54 &7699703810326180931
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1919,8 +1920,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.806593, y: 1.9898968, z: 1}
-  m_Center: {x: -0.19401073, y: 0.9527905, z: 0}
+  m_Size: {x: 2.806593, y: 1.9706303, z: 1}
+  m_Center: {x: -0.19401073, y: 0.96242374, z: -3.2351742e-14}
 --- !u!1 &7709891858042071440
 GameObject:
   m_ObjectHideFlags: 0

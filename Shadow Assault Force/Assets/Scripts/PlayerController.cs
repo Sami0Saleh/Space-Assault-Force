@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _moveSpeed;
     [SerializeField] float _rotationSpeed; 
     private Vector3 _moveDirection;
+    [SerializeField] bool _isMoving = false;
 
     private int _weaponIndex;
 
@@ -35,8 +36,11 @@ public class PlayerController : MonoBehaviour
         if (_currentEnemy != null)
         {
             transform.LookAt(_currentEnemy.transform);
-            _weapon._isShooting = true;
-            _anim.SetBool("isShooting", true);
+            if (!_isMoving )
+            {
+                _weapon._isShooting = true;
+                _anim.SetBool("isShooting", true);
+            }
         }
         else
         {
@@ -50,7 +54,7 @@ public class PlayerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         _moveDirection = transform.forward * verticalInput;
-
+        
         // Rotate the player left or right
         transform.Rotate(Vector3.up, horizontalInput * _rotationSpeed * Time.deltaTime);
 
@@ -61,6 +65,25 @@ public class PlayerController : MonoBehaviour
         if (_camTransform != null)
         {
             _camTransform.position = transform.position + new Vector3(0f, 5f, -10f);
+        }
+
+        if (_moveDirection != Vector3.zero)
+        {
+            _isMoving = true;
+            if (_moveDirection == Vector3.forward)
+            {
+                _anim.SetBool("isFWD", true);
+            }
+            else
+            {
+                _anim.SetBool("isBWD", true);
+            }
+        }
+        else
+        {
+            _isMoving = false;
+            _anim.SetBool("isFWD", false);
+            _anim.SetBool("isBWD", false);
         }
         /*if (Input.GetKey(KeyCode.W))
         {
@@ -99,14 +122,9 @@ public class PlayerController : MonoBehaviour
         {
             _anim.SetBool("isReloading", true);
             _weapon.Reload();
-
         }
         else
         {
-            _anim.SetBool("isFWD", false);
-            _anim.SetBool("isBWD", false);
-            _anim.SetBool("isLeft", false);
-            _anim.SetBool("isRight", false);
             _anim.SetBool("isReloading", false);
         }
         if (Input.GetKey(KeyCode.Alpha1))
