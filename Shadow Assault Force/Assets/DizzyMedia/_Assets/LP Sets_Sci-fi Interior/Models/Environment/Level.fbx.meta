@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: ab052a62dbb927449b02d208af93fe2f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ceiling light
+    100002: ceiling1
+    100004: COMPUTER PANEL
+    100006: COMPUTER PANEL.001
+    100008: door
+    100010: door light
+    100012: FLOOR1
+    100014: floor2.001
+    100016: floorgrate
+    100018: high panels
+    100020: //RootNode
+    100022: light housing
+    100024: LIGHTS
+    100026: lower panel
+    100028: mid rail
+    100030: pipe box
+    100032: pipe rack
+    100034: PIPES
+    100036: Plane.001
+    100038: TALL PANEL
+    100040: TOP PANELS
+    100042: under grate
+    100044: wall external cornerfill
+    100046: wall fill small
+    100048: wall ground light
+    100050: wall internal
+    100052: wall1
+    100054: WALL2
+    400000: ceiling light
+    400002: ceiling1
+    400004: COMPUTER PANEL
+    400006: COMPUTER PANEL.001
+    400008: door
+    400010: door light
+    400012: FLOOR1
+    400014: floor2.001
+    400016: floorgrate
+    400018: high panels
+    400020: //RootNode
+    400022: light housing
+    400024: LIGHTS
+    400026: lower panel
+    400028: mid rail
+    400030: pipe box
+    400032: pipe rack
+    400034: PIPES
+    400036: Plane.001
+    400038: TALL PANEL
+    400040: TOP PANELS
+    400042: under grate
+    400044: wall external cornerfill
+    400046: wall fill small
+    400048: wall ground light
+    400050: wall internal
+    400052: wall1
+    400054: WALL2
+    2100000: walkway
+    2100002: No Name
+    2300000: ceiling light
+    2300002: ceiling1
+    2300004: COMPUTER PANEL
+    2300006: COMPUTER PANEL.001
+    2300008: door
+    2300010: door light
+    2300012: FLOOR1
+    2300014: floor2.001
+    2300016: floorgrate
+    2300018: high panels
+    2300020: light housing
+    2300022: LIGHTS
+    2300024: lower panel
+    2300026: mid rail
+    2300028: pipe box
+    2300030: pipe rack
+    2300032: PIPES
+    2300034: Plane.001
+    2300036: TALL PANEL
+    2300038: TOP PANELS
+    2300040: under grate
+    2300042: wall external cornerfill
+    2300044: wall fill small
+    2300046: wall ground light
+    2300048: wall internal
+    2300050: wall1
+    2300052: WALL2
+    3300000: ceiling light
+    3300002: ceiling1
+    3300004: COMPUTER PANEL
+    3300006: COMPUTER PANEL.001
+    3300008: door
+    3300010: door light
+    3300012: FLOOR1
+    3300014: floor2.001
+    3300016: floorgrate
+    3300018: high panels
+    3300020: light housing
+    3300022: LIGHTS
+    3300024: lower panel
+    3300026: mid rail
+    3300028: pipe box
+    3300030: pipe rack
+    3300032: PIPES
+    3300034: Plane.001
+    3300036: TALL PANEL
+    3300038: TOP PANELS
+    3300040: under grate
+    3300042: wall external cornerfill
+    3300044: wall fill small
+    3300046: wall ground light
+    3300048: wall internal
+    3300050: wall1
+    3300052: WALL2
+    4300000: Plane.001
+    4300002: FLOOR1
+    4300004: door
+    4300006: door light
+    4300008: ceiling1
+    4300010: ceiling light
+    4300012: light housing
+    4300014: pipe rack
+    4300016: floor2.001
+    4300018: floorgrate
+    4300020: under grate
+    4300022: wall1
+    4300024: wall ground light
+    4300026: mid rail
+    4300028: lower panel
+    4300030: high panels
+    4300032: pipe box
+    4300034: wall external cornerfill
+    4300036: WALL2
+    4300038: PIPES
+    4300040: LIGHTS
+    4300042: TOP PANELS
+    4300044: COMPUTER PANEL
+    4300046: TALL PANEL
+    4300048: COMPUTER PANEL.001
+    4300050: wall fill small
+    4300052: wall internal
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

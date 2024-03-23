@@ -1,0 +1,1 @@
+In order to get the same look as the product page images/videos you need to change your Color Space to Linear and import post processing from the package manager.

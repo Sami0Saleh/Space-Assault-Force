@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool _isMoving = false;
 
     private int _weaponIndex;
+    public int Level = 0;
 
     private void Start()
     {
@@ -53,8 +54,9 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        _moveDirection = transform.forward * verticalInput;
+        _moveDirection = new Vector3(horizontalInput, 0, verticalInput);
         
+
         // Rotate the player left or right
         transform.Rotate(Vector3.up, horizontalInput * _rotationSpeed * Time.deltaTime);
 
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
         // Update camera position to follow the player
         if (_camTransform != null)
         {
-            _camTransform.position = transform.position + new Vector3(0f, 5f, -10f);
+            _camTransform.position = transform.position + new Vector3(0f, 1f, -1f);
         }
 
         if (_moveDirection != Vector3.zero)

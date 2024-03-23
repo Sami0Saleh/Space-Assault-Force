@@ -1816,8 +1816,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2214972, y: 0, z: -36.65}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1802145510519468347}
   - {fileID: 8032836495713864101}
@@ -1870,10 +1870,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _detectionRangeCircle: {fileID: 8325612128049525083}
-  _detectionRange: 10
-  _moveSpeed: 4
+  _detectionRange: 1.5
+  _moveSpeed: 1
   _rotationSpeed: 30
   _isMoving: 0
+  Level: 0
 --- !u!54 &7699703810326180931
 Rigidbody:
   m_ObjectHideFlags: 0
