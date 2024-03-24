@@ -26,5 +26,16 @@ public class Bullet : MonoBehaviour
             
             Destroy(gameObject);
         }
+        if (other.tag == "Player")
+        {
+            Debug.Log(other.tag);
+            PlayerController player = other.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                player.RangeTakeDamage();
+            }
+
+            Destroy(gameObject);
+        }
     }
 }

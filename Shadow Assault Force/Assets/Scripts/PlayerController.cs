@@ -9,10 +9,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator _anim;
     [SerializeField] GameObject _pistol;
     [SerializeField] GameObject _assaultRifle;
-    [SerializeField] Weapon _weapon;
+    [SerializeField] PlayerWeapon _weapon;
     [SerializeField] LayerMask _enemyLayer;
     [SerializeField] LineRenderer _detectionRangeCircle;
-
+    private int _maxHP = 20;
+    public int CurrentHP;
     private GameObject _currentEnemy;
     [SerializeField] float _detectionRange;
 
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        CurrentHP = _maxHP;
         _weaponIndex = 0;
         StartCoroutine(SwitchWeapons());
     }
@@ -55,7 +57,6 @@ public class PlayerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         _moveDirection = new Vector3(horizontalInput, 0, verticalInput);
-        
 
         // Rotate the player left or right
         transform.Rotate(Vector3.up, horizontalInput * _rotationSpeed * Time.deltaTime);
@@ -66,9 +67,8 @@ public class PlayerController : MonoBehaviour
         // Update camera position to follow the player
         if (_camTransform != null)
         {
-            _camTransform.position = transform.position + new Vector3(0f, 1f, -1f);
+            _camTransform.position = transform.position + new Vector3(0f, 1.25f, -1f);
         }
-
         if (_moveDirection != Vector3.zero)
         {
             _isMoving = true;
@@ -143,7 +143,6 @@ public class PlayerController : MonoBehaviour
             _anim.SetBool("isPistol", false);
             StartCoroutine(SwitchWeapons());
         }
-       
     }
     public void UpdateDetectionRangeCircle()
     {
@@ -185,6 +184,40 @@ public class PlayerController : MonoBehaviour
             _currentEnemy = null;
         }
     }
+    public void MeleeTakeDamage(Grabber grabber)
+    {
+        CurrentHP -= grabber.Damage;
+        if (CurrentHP <= 0)
+        {
+            Die();
+        }
+        grabber.FinishAttack();
+    }
+    public void RangeTakeDamage()
+    {
+        CurrentHP -= 2;
+        if (CurrentHP <= 0)
+        {
+            Die();
+        }
+        
+    }
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Grabber"))
+        {
+            Grabber grabber = other.GetComponent<Grabber>();
+            if (grabber != null)
+            {
+                MeleeTakeDamage(grabber);
+            }
+        }
+    }
+
     IEnumerator SwitchWeapons()
     {
 

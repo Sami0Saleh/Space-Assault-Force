@@ -1,36 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] PlayerController playerController;
-    [SerializeField] Transform playerPos;
+    private GameObject _playerController;
     [SerializeField] Animator animator;
     [SerializeField] GameObject _droppableObjectPrefab;
+    [SerializeField] EnemyWeapon _enemyWeapon;
+    [SerializeField] LayerMask _player;
+    [SerializeField] LayerMask obstacleLayer;
+    [SerializeField] bool _isRanged;
+    [SerializeField] bool _isBigAnkleGrabber;
 
     private int _maxHp = 10;
-    private int _currentHp;
-    public float movmentSpeed = 1f;
-    public float rotateSpeed = 0.3f;
+    public int _currentHp;
     public int Damage = 2;
     public bool enemyIsDead = false;
     public bool isAttacking = false;
+    public float detectionRange = 3f;
+    public float attackRange = 2f;
+    public float moveSpeed = 1f;
+    public float rotationSpeed = 2f;
 
-    [SerializeField] NavMeshAgent SpitterAgent;
-    [SerializeField] LayerMask _player;
-    public float SightRange;
-    public float AttackRange;
-    private bool _playerIsInMySight;
-    private bool _playerInAttackRange;
-
+    public bool isAttackFinished = true;
+    private bool isPlayerDetected;
 
     private void Start()
     {
         _currentHp = _maxHp;
     }
-    void Update()
+    private void Update()
     {
         enemeyState();
 
@@ -38,40 +39,103 @@ public class EnemyController : MonoBehaviour
     }
     private void enemeyState()
     {
-        //Check for Sight and Damage Range
-        _playerIsInMySight = Physics.CheckSphere(transform.position, SightRange, _player);
-        _playerInAttackRange = Physics.CheckSphere(transform.position, AttackRange, _player);
-
-
-        if (_playerIsInMySight && !_playerInAttackRange)
+        if(isAttackFinished)
         {
-            ChasePlayer();
+            animator.SetBool("isAttaking", false);
         }
-
-        if (_playerIsInMySight && _playerInAttackRange)
+        if (!isPlayerDetected)
         {
-            isAttacking = true;
-            animator.SetBool("isWalking", false);
-            animator.SetBool("isAttacking", true);
+            // Detect the player
+            DetectPlayer();
+        }
+        else
+        {
+            // Move towards the player
+            MoveTowardsPlayer();
         }
     }
-    private void ChasePlayer() // great
+    public void DetectPlayer()
     {
-        transform.LookAt(playerPos);
-        SpitterAgent.SetDestination(playerPos.position);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, detectionRange);
+
+        foreach (Collider col in hitColliders)
+        {
+            if (col.CompareTag("Player"))
+            {
+                isPlayerDetected = true;
+                _playerController = col.gameObject;
+                break;
+            }
+        }
     }
+    public void MoveTowardsPlayer()
+    {
+        // Rotate towards the player
+        Vector3 direction = (_playerController.transform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+
+        // Move towards the player
+        float distanceToPlayer = Vector3.Distance(transform.position, _playerController.transform.position);
+        if (distanceToPlayer > attackRange)
+        {
+            // Check for obstacles in front of the enemy
+            if (!IsObstacleInPath())
+            {
+                transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+            }
+        }
+        else
+        {
+            if (_isRanged && _playerController != null)
+            {
+                RangeAttackPlayer();
+            }
+            else if (!_isRanged && _playerController != null)
+            {
+                isAttackFinished = false;
+                animator.SetBool("isAttaking", true);
+            }
+            else
+            {
+                _enemyWeapon._isShooting = false;
+                isAttacking = false;
+            }
+        }
+    }
+    public bool IsObstacleInPath()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, detectionRange, obstacleLayer))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void RangeAttackPlayer()
+    {
+        isAttacking = true;
+        _enemyWeapon._isShooting = true;
+    }
+    
     public void GotHit()
     {
         _currentHp--;
-        Debug.Log("Got Hit By Bullet");
         if (_currentHp <= 0)
         {
-            Die();
+            if (!_isBigAnkleGrabber)
+            {
+                Die();
+            }
         }
     }
-    void Die()
+    public void Die()
     {
-        DropObjects();
+        if (!_isBigAnkleGrabber)
+        {
+            DropObjects();
+        }
         Destroy(gameObject);
     }
 
@@ -83,8 +147,13 @@ public class EnemyController : MonoBehaviour
         for (int i = 0; i < numObjectsToDrop; i++)
         {
             // Instantiate the droppable object with random position offset
-            Vector3 dropPosition = transform.position + Random.insideUnitSphere * 2f; // Example: Drop objects within a 2-unit radius
+            Vector3 dropPosition = transform.position + Random.insideUnitSphere * 0.3f; // Example: Drop objects within a 2-unit radius
             Instantiate(_droppableObjectPrefab, dropPosition, Quaternion.identity);
         }
     }
+    /*public void SetPlayer(PlayerController player)
+    {
+        _playerController = player;
+    }*/
+    
 }

@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|c:\\users\\samis\\onedrive\\desktop\\shadow-assault-force\\shadow assault force\\assets\\scripts\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|c:\\users\\samis\\onedrive\\desktop\\shadow-assault-force\\shadow assault force\\assets\\scripts\\enemyweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\levelend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levelend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,8 +19,24 @@
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|c:\\users\\samis\\onedrive\\desktop\\shadow-assault-force\\shadow assault force\\assets\\scripts\\playerweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\biganklegrabber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\biganklegrabber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\grabber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grabber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\levelend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levelend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,11 +46,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "EnemyWeapon.cs",
+              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\EnemyWeapon.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyWeapon.cs",
+              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\EnemyWeapon.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyWeapon.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAYwC8AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T14:23:58.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
+              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwCIAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T08:36:27.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Grabber.cs",
+              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Grabber.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Grabber.cs",
+              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Grabber.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Grabber.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T12:44:00.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BigAnkleGrabber.cs",
+              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\BigAnkleGrabber.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BigAnkleGrabber.cs",
+              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\BigAnkleGrabber.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BigAnkleGrabber.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBYAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T07:29:41.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "LevelManager.cs",
               "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\LevelManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LevelManager.cs",
@@ -50,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "LevelEnd.cs",
               "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\LevelEnd.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LevelEnd.cs",
@@ -62,52 +126,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Weapon.cs",
-              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Weapon.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon.cs",
-              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Weapon.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Weapon.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAiwAgAAAANAAAA",
+              "DocumentIndex": 4,
+              "Title": "PlayerWeapon.cs",
+              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\PlayerWeapon.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerWeapon.cs",
+              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\PlayerWeapon.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerWeapon.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T19:15:23.66Z"
+              "WhenOpened": "2024-03-16T19:15:23.66Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EnemyController.cs",
               "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\EnemyController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyController.cs",
               "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\EnemyController.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyController.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAmwDwAAAA4AAAA",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAowGUAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-16T18:51:43.231Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Bullet.cs",
-              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Bullet.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Bullet.cs",
-              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Bullet.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Bullet.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAcwBQAAABKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T08:36:27.606Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAgwBgAAAAUAAAA",
+              "ViewState": "AQIAAIAAAAAAAAAAAAAgwMMAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T07:29:01.419Z"
+              "WhenOpened": "2024-03-16T07:29:01.419Z",
+              "EditorCaption": ""
             }
           ]
         }
