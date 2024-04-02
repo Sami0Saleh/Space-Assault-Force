@@ -4976,9 +4976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe11cf1f209c44b4bbe219e084e6eaf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 0}
   animator: {fileID: 8524725594905845674}
   _droppableObjectPrefab: {fileID: 7093976295188696494, guid: de282b1496590d045acebd140f8b02a1, type: 3}
+  _enemyWeapon: {fileID: 0}
   _player:
     serializedVersion: 2
     m_Bits: 128
@@ -4995,6 +4995,7 @@ MonoBehaviour:
   attackRange: 0.2
   moveSpeed: 1
   rotationSpeed: 2
+  isAttackFinished: 1
 --- !u!95 &8524725594905845674
 Animator:
   serializedVersion: 5
@@ -5062,8 +5063,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.7911952, y: 3.2242537, z: 3.6477625}
-  m_Center: {x: 0.012329221, y: 1.619415, z: -1.3845235}
+  m_Size: {x: 3.7911952, y: 4.394612, z: 3.6477625}
+  m_Center: {x: 0.012329221, y: 2.2045941, z: -1.3845235}
 --- !u!1 &7436829923948519106
 GameObject:
   m_ObjectHideFlags: 0

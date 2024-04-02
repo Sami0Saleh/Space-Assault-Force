@@ -1778,10 +1778,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 3621494352983870489}
-  _bullet: {fileID: 9013930924961837769, guid: 41574c8619fa0f84f94b9942fde31aa6, type: 3}
+  _bullet: {fileID: 6483222281551877279, guid: acebbbb5fa16d374096820e2539f46df, type: 3}
   _bulletRange: 100
   _fireRate: 1
-  _reloatTime: 1
+  _reloadTime: 0.1
   _magazineSize: 20
   _isAutomatic: 0
   _isShooting: 0
@@ -1799,7 +1799,7 @@ GameObject:
   - component: {fileID: 3621494352983870489}
   - component: {fileID: 7699703810326180931}
   - component: {fileID: 4168278963335491463}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1870,6 +1870,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _detectionRangeCircle: {fileID: 8325612128049525083}
+  CurrentHP: 0
   _detectionRange: 1.5
   _moveSpeed: 1
   _rotationSpeed: 30

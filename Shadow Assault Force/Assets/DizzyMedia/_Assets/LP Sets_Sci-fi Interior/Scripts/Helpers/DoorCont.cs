@@ -78,7 +78,7 @@ public class DoorCont : MonoBehaviour {
     
     private void OnTriggerEnter(Collider other) {
         
-        if(!locked){
+        if(!locked && PlayerController.EnemyCount == 0){
         
             if(other.gameObject.tag == tagToCheck){
 

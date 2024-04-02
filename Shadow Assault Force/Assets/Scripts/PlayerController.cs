@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,17 +18,28 @@ public class PlayerController : MonoBehaviour
     public int CurrentHP;
     private GameObject _currentEnemy;
     [SerializeField] float _detectionRange;
+    [SerializeField] bool currentEnemy;
+    
 
     [SerializeField] float _moveSpeed;
     [SerializeField] float _rotationSpeed; 
     private Vector3 _moveDirection;
+    private Vector3 originalForward;
+    private Quaternion originalrotation;
     [SerializeField] bool _isMoving = false;
 
     private int _weaponIndex;
     public int Level = 0;
+    private bool _isReloading = false;
+    public static int EnemyCount = 1;
+
+    public static bool IsplayerDead;
 
     private void Start()
     {
+        IsplayerDead = false;
+        originalForward = transform.forward;
+        originalrotation = transform.rotation;
         CurrentHP = _maxHP;
         _weaponIndex = 0;
         StartCoroutine(SwitchWeapons());
@@ -36,33 +49,20 @@ public class PlayerController : MonoBehaviour
         UpdateDetectionRangeCircle();
         Move();
         DetectEnemy();
-        if (_currentEnemy != null)
-        {
-            transform.LookAt(_currentEnemy.transform);
-            if (!_isMoving )
-            {
-                _weapon._isShooting = true;
-                _anim.SetBool("isShooting", true);
-            }
-        }
-        else
-        {
-            _weapon._isShooting = false;
-            _anim.SetBool("isShooting", false);
-        }
+        
+        
     }
     public void Move()
     {
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+        
+        _moveDirection = (originalForward * verticalInput) + (transform.right * horizontalInput);
 
-        _moveDirection = new Vector3(horizontalInput, 0, verticalInput);
-
-        // Rotate the player left or right
-        transform.Rotate(Vector3.up, horizontalInput * _rotationSpeed * Time.deltaTime);
 
         // Move the player forward or backward
-        transform.Translate(_moveDirection * _moveSpeed * Time.deltaTime);
+        transform.Translate(_moveDirection * _moveSpeed * Time.deltaTime, Space.World);
 
         // Update camera position to follow the player
         if (_camTransform != null)
@@ -87,46 +87,32 @@ public class PlayerController : MonoBehaviour
             _anim.SetBool("isFWD", false);
             _anim.SetBool("isBWD", false);
         }
-        /*if (Input.GetKey(KeyCode.W))
+        if (_currentEnemy != null)
         {
-            transform.Translate(Vector3.forward * _speed * Time.deltaTime);
-            _anim.SetBool("isFWD", true); 
-            _anim.SetBool("isBWD", false); 
-            _anim.SetBool("isLeft", false);
-            _anim.SetBool("isRight", false);
+            
+            if (!_isMoving || !_isReloading)
+            {
+                _weapon._isShooting = true;
+                _anim.SetBool("isShooting", true);
+            }
+            
         }
-        else if (Input.GetKey(KeyCode.S))
+        else
         {
-            transform.Translate(Vector3.back * _speed * Time.deltaTime);
-            _anim.SetBool("isBWD", true); 
-            _anim.SetBool("isFWD", false);
-            _anim.SetBool("isLeft", false);
-            _anim.SetBool("isRight", false);
+             transform.rotation = originalrotation;
+            _weapon._isShooting = false;
+            _anim.SetBool("isShooting", false);
         }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * _speed * Time.deltaTime);
-            _anim.SetBool("isFWD", false);
-            _anim.SetBool("isBWD", false);
-            _anim.SetBool("isLeft", false);
-            _anim.SetBool("isRight", true);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * _speed * Time.deltaTime);
-            _anim.SetBool("isFWD", false);
-            _anim.SetBool("isBWD", false);
-            _anim.SetBool("isLeft", true);
-            _anim.SetBool("isRight", false);
-        }*/
-       
+
         if (Input.GetKey(KeyCode.R))
         {
+            _isReloading = true;
             _anim.SetBool("isReloading", true);
             _weapon.Reload();
         }
         else
         {
+            _isReloading = false;
             _anim.SetBool("isReloading", false);
         }
         if (Input.GetKey(KeyCode.Alpha1))
@@ -174,7 +160,8 @@ public class PlayerController : MonoBehaviour
                 {
                     closestDistance = distance;
                     _currentEnemy = col.gameObject;
-                    
+                    currentEnemy = true;
+                    transform.LookAt(_currentEnemy.transform);
                 }
                 
             }
@@ -182,6 +169,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             _currentEnemy = null;
+            currentEnemy = false;
+            
         }
     }
     public void MeleeTakeDamage(Grabber grabber)
@@ -189,6 +178,7 @@ public class PlayerController : MonoBehaviour
         CurrentHP -= grabber.Damage;
         if (CurrentHP <= 0)
         {
+            IsplayerDead = true;
             Die();
         }
         grabber.FinishAttack();
@@ -198,6 +188,7 @@ public class PlayerController : MonoBehaviour
         CurrentHP -= 2;
         if (CurrentHP <= 0)
         {
+            IsplayerDead = true;
             Die();
         }
         
@@ -205,6 +196,7 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
+        SceneManager.LoadScene(0);
     }
     public void OnTriggerEnter(Collider other)
     {

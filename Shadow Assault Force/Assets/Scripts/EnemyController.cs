@@ -33,9 +33,10 @@ public class EnemyController : MonoBehaviour
     }
     private void Update()
     {
-        enemeyState();
-
-
+        if (!PlayerController.IsplayerDead)
+        {
+            enemeyState();
+        }
     }
     private void enemeyState()
     {
@@ -70,6 +71,7 @@ public class EnemyController : MonoBehaviour
     }
     public void MoveTowardsPlayer()
     {
+        
         // Rotate towards the player
         Vector3 direction = (_playerController.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
@@ -134,6 +136,7 @@ public class EnemyController : MonoBehaviour
     {
         if (!_isBigAnkleGrabber)
         {
+            PlayerController.EnemyCount--;
             DropObjects();
         }
         Destroy(gameObject);

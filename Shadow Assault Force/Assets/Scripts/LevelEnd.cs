@@ -13,6 +13,7 @@ public class LevelEnd : MonoBehaviour
             if (player != null)
             {
                 player.Level++;
+                PlayerController.EnemyCount = 1;
                 _levelManager.StartLevel();
             }
             
