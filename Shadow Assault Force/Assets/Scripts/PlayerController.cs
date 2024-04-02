@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerWeapon _weapon;
     [SerializeField] LayerMask _enemyLayer;
     [SerializeField] LineRenderer _detectionRangeCircle;
-    private int _maxHP = 20;
+    private int _maxHP = 100;
     public int CurrentHP;
     private GameObject _currentEnemy;
     [SerializeField] float _detectionRange;
@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
 
     private int _weaponIndex;
     public int Level = 0;
-    private bool _isReloading = false;
     public static int EnemyCount = 1;
 
     public static bool IsplayerDead;
@@ -90,31 +89,21 @@ public class PlayerController : MonoBehaviour
         if (_currentEnemy != null)
         {
             
-            if (!_isMoving || !_isReloading)
+            if (!_isMoving)
             {
-                _weapon._isShooting = true;
+                _weapon.StartShot();
                 _anim.SetBool("isShooting", true);
             }
+            
             
         }
         else
         {
-             transform.rotation = originalrotation;
-            _weapon._isShooting = false;
+            transform.rotation = originalrotation;
+            _weapon.EndShot();
             _anim.SetBool("isShooting", false);
         }
-
-        if (Input.GetKey(KeyCode.R))
-        {
-            _isReloading = true;
-            _anim.SetBool("isReloading", true);
-            _weapon.Reload();
-        }
-        else
-        {
-            _isReloading = false;
-            _anim.SetBool("isReloading", false);
-        }
+        
         if (Input.GetKey(KeyCode.Alpha1))
         {
             _weaponIndex = 0;

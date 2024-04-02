@@ -9,38 +9,34 @@ public class EnemyWeapon : MonoBehaviour
 
     [SerializeField] float _bulletRange;
     [SerializeField] float _fireRate;
-    [SerializeField] float _reloadTime;
-    [SerializeField] int _magazineSize;
     [SerializeField] bool _isAutomatic;
-    private int _ammoLeft;
+    private int _ammoLeft = 1;
 
-    public bool _isShooting;
+    public bool _canShoot;
     private bool _readyToShoot;
-    public bool _reloading;
 
     private RaycastHit _rayHit;
 
     private void Awake()
     {
-        _ammoLeft = _magazineSize;
         _readyToShoot = true;
     }
 
     void Update()
     {
-        if (_isShooting && _readyToShoot && !_reloading && _ammoLeft > 0)
+        if (_canShoot && _readyToShoot)
         {
             PerformShot();
         }
     }
 
-    private void StartShot()
+    public void StartShot()
     {
-        _isShooting = true;
+        _canShoot = true;
     }
-    private void EndShot()
+    public void EndShot()
     {
-        _isShooting = false;
+        _canShoot = false;
     }
     private void PerformShot()
     {
@@ -56,7 +52,7 @@ public class EnemyWeapon : MonoBehaviour
             }
         }
 
-        _ammoLeft--;
+       
         if (_ammoLeft >= 0)
         {
             Invoke("ResetShot", _fireRate);
@@ -71,14 +67,5 @@ public class EnemyWeapon : MonoBehaviour
     {
         _readyToShoot = true;
     }
-    public void Reload()
-    {
-        _reloading = true;
-        Invoke("ReloadFinish", _reloadTime);
-    }
-    private void ReloadFinish()
-    {
-        _ammoLeft = _magazineSize;
-        _reloading = false;
-    }
+    
 }

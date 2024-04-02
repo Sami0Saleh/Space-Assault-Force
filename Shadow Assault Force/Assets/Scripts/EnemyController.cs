@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] bool _isRanged;
     [SerializeField] bool _isBigAnkleGrabber;
 
-    private int _maxHp = 10;
+    private int _maxHp = 20;
     public int _currentHp;
     public int Damage = 2;
     public bool enemyIsDead = false;
@@ -100,7 +100,7 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-                _enemyWeapon._isShooting = false;
+                _enemyWeapon.EndShot();
                 isAttacking = false;
             }
         }
@@ -118,7 +118,7 @@ public class EnemyController : MonoBehaviour
     public void RangeAttackPlayer()
     {
         isAttacking = true;
-        _enemyWeapon._isShooting = true;
+        _enemyWeapon.StartShot();
     }
     
     public void GotHit()
