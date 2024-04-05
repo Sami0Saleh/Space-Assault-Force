@@ -1779,13 +1779,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerController: {fileID: 3621494352983870489}
   _bullet: {fileID: 6483222281551877279, guid: acebbbb5fa16d374096820e2539f46df, type: 3}
-  _bulletRange: 100
-  _fireRate: 1
-  _reloadTime: 0.1
-  _magazineSize: 20
+  _bulletRange: 10
+  _fireRate: 1.5
   _isAutomatic: 0
-  _isShooting: 0
-  _reloading: 0
 --- !u!1 &7252082888718511876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,6 +1868,7 @@ MonoBehaviour:
   _detectionRangeCircle: {fileID: 8325612128049525083}
   CurrentHP: 0
   _detectionRange: 1.5
+  currentEnemy: 0
   _moveSpeed: 1
   _rotationSpeed: 30
   _isMoving: 0

@@ -12,10 +12,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _pistol;
     [SerializeField] GameObject _assaultRifle;
     [SerializeField] PlayerWeapon _weapon;
+    [SerializeField] LevelUIManager _levelUIManager;
+    [SerializeField] UpgradeManager _upgradeManager;
     [SerializeField] LayerMask _enemyLayer;
     [SerializeField] LineRenderer _detectionRangeCircle;
-    private int _maxHP = 100;
+    private int _maxHP = 1000;
     public int CurrentHP;
+    public int Damage = 2;
     private GameObject _currentEnemy;
     [SerializeField] float _detectionRange;
     [SerializeField] bool currentEnemy;
@@ -27,6 +30,11 @@ public class PlayerController : MonoBehaviour
     private Vector3 originalForward;
     private Quaternion originalrotation;
     [SerializeField] bool _isMoving = false;
+    public int LevelCoins = 0;
+    public int PlayerLevel = 1;
+    public int PlayerLevelXP = 0;
+    public int PlayerLevelMaxXP;
+    
 
     private int _weaponIndex;
     public int Level = 0;
@@ -34,12 +42,20 @@ public class PlayerController : MonoBehaviour
 
     public static bool IsplayerDead;
 
+    private void Awake()
+    {
+        CurrentHP = _maxHP;
+        PlayerLevelMaxXP = 50;
+        _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
+        _levelUIManager.UpdatePlayerLevel(PlayerLevel);
+        _levelUIManager.UpdatePlayerXP(PlayerLevelXP, PlayerLevelMaxXP);
+        _levelUIManager.UpdatePlayerCoins(LevelCoins);
+    }
     private void Start()
     {
         IsplayerDead = false;
         originalForward = transform.forward;
         originalrotation = transform.rotation;
-        CurrentHP = _maxHP;
         _weaponIndex = 0;
         StartCoroutine(SwitchWeapons());
     }
@@ -170,6 +186,7 @@ public class PlayerController : MonoBehaviour
             IsplayerDead = true;
             Die();
         }
+        _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
         grabber.FinishAttack();
     }
     public void RangeTakeDamage()
@@ -180,13 +197,32 @@ public class PlayerController : MonoBehaviour
             IsplayerDead = true;
             Die();
         }
-        
+        _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
+
     }
     public void Die()
     {
         Destroy(gameObject);
         SceneManager.LoadScene(0);
     }
+    public void UpdatePlayerCoins()
+    {
+        Meta.Coins += LevelCoins;
+    }
+    public void UpdatePlayerLevel()
+    {
+        PlayerLevelXP = LevelCoins;
+        if (PlayerLevelXP >= PlayerLevelMaxXP)
+        {
+            PlayerLevel++;
+            PlayerLevelXP -= PlayerLevelMaxXP;
+            PlayerLevelMaxXP += 50;
+            _upgradeManager.SpawnRandomUpgrades(transform.position);
+        }
+        _levelUIManager.UpdatePlayerLevel(PlayerLevel);
+        _levelUIManager.UpdatePlayerXP(PlayerLevelXP, PlayerLevelMaxXP);
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Grabber"))
@@ -197,8 +233,21 @@ public class PlayerController : MonoBehaviour
                 MeleeTakeDamage(grabber);
             }
         }
+        if (other.tag == "Coin")
+        {
+            LevelCoins++;
+            _levelUIManager.UpdatePlayerCoins(LevelCoins);
+            UpdatePlayerLevel();
+        }
     }
-
+    public void IncreaseDamage(int value)
+    {
+        Damage += value;
+    }
+    public void IncreaseHealth(int value)
+    {
+        _maxHP += value;
+    }
     IEnumerator SwitchWeapons()
     {
 

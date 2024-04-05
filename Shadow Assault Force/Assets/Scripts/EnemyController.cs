@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] bool _isRanged;
     [SerializeField] bool _isBigAnkleGrabber;
 
-    private int _maxHp = 20;
+    private int _maxHp = 5;
     public int _currentHp;
     public int Damage = 2;
     public bool enemyIsDead = false;
@@ -23,7 +23,6 @@ public class EnemyController : MonoBehaviour
     public float attackRange = 2f;
     public float moveSpeed = 1f;
     public float rotationSpeed = 2f;
-
     public bool isAttackFinished = true;
     private bool isPlayerDetected;
 
@@ -46,12 +45,10 @@ public class EnemyController : MonoBehaviour
         }
         if (!isPlayerDetected)
         {
-            // Detect the player
             DetectPlayer();
         }
         else
         {
-            // Move towards the player
             MoveTowardsPlayer();
         }
     }
@@ -114,13 +111,11 @@ public class EnemyController : MonoBehaviour
         }
         return false;
     }
-
     public void RangeAttackPlayer()
     {
         isAttacking = true;
         _enemyWeapon.StartShot();
     }
-    
     public void GotHit()
     {
         _currentHp--;
@@ -141,22 +136,17 @@ public class EnemyController : MonoBehaviour
         }
         Destroy(gameObject);
     }
-
     void DropObjects()
     {
         // Randomize the number of objects dropped
-        int numObjectsToDrop = Random.Range(1, 5); // Example: Drop between 1 to 4 objects
+        //int numObjectsToDrop = Random.Range(1, 6);
+        int numObjectsToDrop = 50;
 
         for (int i = 0; i < numObjectsToDrop; i++)
         {
-            // Instantiate the droppable object with random position offset
-            Vector3 dropPosition = transform.position + Random.insideUnitSphere * 0.3f; // Example: Drop objects within a 2-unit radius
+            
+            Vector3 dropPosition = new Vector3(transform.position.x + Random.Range(0.01f, 0.3f), -0.461f, transform.position.z + Random.Range(0.01f,0.3f));
             Instantiate(_droppableObjectPrefab, dropPosition, Quaternion.identity);
         }
     }
-    /*public void SetPlayer(PlayerController player)
-    {
-        _playerController = player;
-    }*/
-    
 }

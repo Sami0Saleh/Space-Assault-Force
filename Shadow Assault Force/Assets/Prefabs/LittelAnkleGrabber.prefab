@@ -4977,7 +4977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8524725594905845674}
-  _droppableObjectPrefab: {fileID: 7093976295188696494, guid: de282b1496590d045acebd140f8b02a1, type: 3}
+  _droppableObjectPrefab: {fileID: 7779213722011517243, guid: 261023df9f8278342b681623deb63cec, type: 3}
   _enemyWeapon: {fileID: 0}
   _player:
     serializedVersion: 2
@@ -4985,6 +4985,9 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _isRanged: 0
   _isBigAnkleGrabber: 0
   _currentHp: 0

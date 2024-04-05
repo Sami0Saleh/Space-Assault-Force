@@ -2617,15 +2617,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe11cf1f209c44b4bbe219e084e6eaf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 0}
   animator: {fileID: 7606148076535147314}
   _droppableObjectPrefab: {fileID: 7093976295188696494, guid: de282b1496590d045acebd140f8b02a1, type: 3}
+  _enemyWeapon: {fileID: 0}
   _player:
     serializedVersion: 2
     m_Bits: 128
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _isRanged: 0
   _isBigAnkleGrabber: 1
   _currentHp: 0
@@ -2636,7 +2639,7 @@ MonoBehaviour:
   attackRange: 0.5
   moveSpeed: 1
   rotationSpeed: 2
-  isAttackFinished: 0
+  isAttackFinished: 1
 --- !u!114 &2305279526839102944
 MonoBehaviour:
   m_ObjectHideFlags: 0
