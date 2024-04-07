@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\upgrademanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgrademanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|c:\\users\\samis\\onedrive\\desktop\\shadow-assault-force\\shadow assault force\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,11 +15,7 @@
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\leveluimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|c:\\users\\samis\\onedrive\\desktop\\shadow-assault-force\\shadow assault force\\assets\\scripts\\upgrademanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgrademanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|c:\\users\\samis\\onedrive\\desktop\\shadow-assault-force\\shadow assault force\\assets\\scripts\\upgradeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\upgradeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -66,17 +66,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UpgradeManager.cs",
               "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\UpgradeManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeManager.cs",
               "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\UpgradeManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradeManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABQAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwCYAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T14:37:40.717Z",
               "EditorCaption": ""
@@ -89,20 +89,20 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeItem.cs",
               "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\UpgradeItem.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradeItem.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAAAwAAAAOAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T14:36:22.349Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "LevelUIManager.cs",
               "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\LevelUIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LevelUIManager.cs",
               "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\LevelUIManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\LevelUIManager.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAiwA8AAAAEAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAmwBMAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T12:38:52.755Z",
               "EditorCaption": ""
@@ -121,13 +121,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerController.cs",
               "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
               "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAAwDsAAAAIAAAA",
+              "ViewState": "AQIAANMAAAAAAAAAAAA2wNsAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-16T07:29:01.419Z",
               "EditorCaption": ""
@@ -190,8 +190,7 @@
               "RelativeToolTip": "Assets\\Scripts\\EnemyController.cs",
               "ViewState": "AQIAAIYAAAAAAAAAAAAAAI4AAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-16T18:51:43.231Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-16T18:51:43.231Z"
             },
             {
               "$type": "Document",

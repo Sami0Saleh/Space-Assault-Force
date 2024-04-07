@@ -217,7 +217,7 @@ public class PlayerController : MonoBehaviour
             PlayerLevel++;
             PlayerLevelXP -= PlayerLevelMaxXP;
             PlayerLevelMaxXP += 50;
-            _upgradeManager.SpawnRandomUpgrades(transform.position);
+            _upgradeManager.SpawnRandomUpgrades();
         }
         _levelUIManager.UpdatePlayerLevel(PlayerLevel);
         _levelUIManager.UpdatePlayerXP(PlayerLevelXP, PlayerLevelMaxXP);

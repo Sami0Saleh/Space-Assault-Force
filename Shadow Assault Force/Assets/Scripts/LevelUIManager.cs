@@ -17,8 +17,8 @@ public class LevelUIManager : MonoBehaviour
     public void UpdatePlayerHP(int playerCurrentHP, int playerMaxHP)
     {
         _playerHPText.text = playerCurrentHP.ToString();
-        _playerHPSlider.value = playerCurrentHP;
         _playerHPSlider.maxValue = playerMaxHP;
+        _playerHPSlider.value = playerCurrentHP;
     }
     public void UpdatePlayerLevel(int playerLevel)
     {
