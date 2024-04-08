@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] LayerMask obstacleLayer;
     [SerializeField] bool _isRanged;
     [SerializeField] bool _isBigAnkleGrabber;
+    [SerializeField] bool _isLittelAnkleGrabber;
 
     private int _maxHp = 5;
     public int _currentHp;
@@ -41,7 +42,7 @@ public class EnemyController : MonoBehaviour
     {
         if(isAttackFinished)
         {
-            animator.SetBool("isAttaking", false);
+            animator.SetBool("isAttacking", false);
         }
         if (!isPlayerDetected)
         {
@@ -68,7 +69,14 @@ public class EnemyController : MonoBehaviour
     }
     public void MoveTowardsPlayer()
     {
-        
+        if (_isBigAnkleGrabber)
+        {
+            attackRange = 0.1f;
+        }
+        else if (_isLittelAnkleGrabber)
+        {
+            attackRange = 0.07f;
+        }
         // Rotate towards the player
         Vector3 direction = (_playerController.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
@@ -93,7 +101,7 @@ public class EnemyController : MonoBehaviour
             else if (!_isRanged && _playerController != null)
             {
                 isAttackFinished = false;
-                animator.SetBool("isAttaking", true);
+                animator.SetBool("isAttacking", true);
             }
             else
             {
@@ -140,7 +148,7 @@ public class EnemyController : MonoBehaviour
     {
         // Randomize the number of objects dropped
         //int numObjectsToDrop = Random.Range(1, 6);
-        int numObjectsToDrop = 50;
+        int numObjectsToDrop = 53;
 
         for (int i = 0; i < numObjectsToDrop; i++)
         {

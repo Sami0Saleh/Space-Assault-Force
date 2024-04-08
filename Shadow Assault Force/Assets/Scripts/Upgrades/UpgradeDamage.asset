@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: UpgradeDamage
   m_EditorClassIdentifier: 
   itemName: Damage
-  icon: {fileID: 21300000, guid: 097782735540f2d4db5606eae04ae6a7, type: 3}
   description: Add 2 Damage
   upgradeType: 0
   prefab: {fileID: 4815702515555983607, guid: 9e48d68950a219546bc08ba3d634ba7e, type: 3}

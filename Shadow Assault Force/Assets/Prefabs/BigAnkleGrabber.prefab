@@ -2626,13 +2626,11 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 512
   _isRanged: 0
   _isBigAnkleGrabber: 1
+  _isLittelAnkleGrabber: 0
   _currentHp: 0
-  Damage: 2
+  Damage: 5
   enemyIsDead: 0
   isAttacking: 0
   detectionRange: 3

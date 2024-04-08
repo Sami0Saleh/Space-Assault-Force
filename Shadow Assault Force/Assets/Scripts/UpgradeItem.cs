@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewUpgradeItem", menuName = "Upgrade Item")]
 public class UpgradeItem : ScriptableObject
 {
     public string itemName;
-    public Sprite icon;
     public string description;
     public UpgradeType upgradeType;
     public GameObject prefab;
@@ -14,6 +14,7 @@ public class UpgradeItem : ScriptableObject
 
     public void ApplyUpgrade(PlayerController player)
     {
+        player = player.GetComponent<PlayerController>();
         switch (upgradeType)
         {
             case UpgradeType.Damage:

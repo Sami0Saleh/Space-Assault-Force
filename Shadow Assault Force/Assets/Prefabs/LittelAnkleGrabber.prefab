@@ -2822,7 +2822,7 @@ GameObject:
   - component: {fileID: 4914762297834784110}
   m_Layer: 0
   m_Name: Bone.019
-  m_TagString: Untagged
+  m_TagString: Grabber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4985,18 +4985,16 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 512
   _isRanged: 0
   _isBigAnkleGrabber: 0
+  _isLittelAnkleGrabber: 1
   _currentHp: 0
-  Damage: 2
+  Damage: 3
   enemyIsDead: 0
   isAttacking: 0
   detectionRange: 3
   attackRange: 0.2
-  moveSpeed: 1
+  moveSpeed: 0.5
   rotationSpeed: 2
   isAttackFinished: 1
 --- !u!95 &8524725594905845674

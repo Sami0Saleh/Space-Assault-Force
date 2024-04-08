@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         CurrentHP = _maxHP;
-        PlayerLevelMaxXP = 50;
+        PlayerLevelMaxXP = 25;
         _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
         _levelUIManager.UpdatePlayerLevel(PlayerLevel);
         _levelUIManager.UpdatePlayerXP(PlayerLevelXP, PlayerLevelMaxXP);
@@ -211,12 +211,12 @@ public class PlayerController : MonoBehaviour
     }
     public void UpdatePlayerLevel()
     {
-        PlayerLevelXP = LevelCoins;
+        
         if (PlayerLevelXP >= PlayerLevelMaxXP)
         {
             PlayerLevel++;
             PlayerLevelXP -= PlayerLevelMaxXP;
-            PlayerLevelMaxXP += 50;
+            PlayerLevelMaxXP += 25;
             _upgradeManager.SpawnRandomUpgrades();
         }
         _levelUIManager.UpdatePlayerLevel(PlayerLevel);
@@ -236,6 +236,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Coin")
         {
             LevelCoins++;
+            PlayerLevelXP++;
             _levelUIManager.UpdatePlayerCoins(LevelCoins);
             UpdatePlayerLevel();
         }
