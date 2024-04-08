@@ -82,6 +82,7 @@
     <Compile Include="Assets\DizzyMedia\_Assets\LP Sets_Sci-fi Interior\Scripts\Helpers\ExtendedFlycam.cs" />
     <Compile Include="Assets\Scripts\BulletSpawner.cs" />
     <Compile Include="Assets\Scripts\Meta.cs" />
+    <Compile Include="Assets\Scripts\UpgradeSpawner.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\LevelEnd.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />

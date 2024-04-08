@@ -8,6 +8,7 @@ using TMPro;
 public class LevelUIManager : MonoBehaviour
 {
     [SerializeField] PlayerController _playerController;
+    [SerializeField] GameObject _upgrades;
     [SerializeField] TextMeshProUGUI _playerHPText;
     [SerializeField] TextMeshProUGUI _playerLevelText;
     [SerializeField] TextMeshProUGUI _playerCoinsText;
@@ -32,5 +33,15 @@ public class LevelUIManager : MonoBehaviour
     {
         _playerLevelSlider.maxValue = playerMaxXP;
         _playerLevelSlider.value = playerXP;
+    }
+    public void OpenUpgrades()
+    {
+        _upgrades.SetActive(true);
+        Time.timeScale = 0.0f;
+    }
+    public void CloseUpgrades()
+    {
+        _upgrades.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 }

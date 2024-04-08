@@ -16689,56 +16689,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4715545187306412, guid: eaf00e58f8a484c37bef75eb300e4645, type: 3}
   m_PrefabInstance: {fileID: 1948775796}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &685265063
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 685265064}
-  - component: {fileID: 685265065}
-  m_Layer: 0
-  m_Name: Upgrade Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &685265064
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685265063}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 794428476}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &685265065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685265063}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3d2ad413d502a4bac082faa3fe3382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgradeItems:
-  - {fileID: 11400000, guid: a15ee7a272d3d4e4b92388ddca404493, type: 2}
-  - {fileID: 11400000, guid: 6b4afc9c2c8d3e840a8843fb61ee116e, type: 2}
-  numberOfUpgradesToSpawn: 3
-  spawnRadius: 5
-  _canvas: {fileID: 853122351}
 --- !u!1001 &686003059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20300,7 +20250,6 @@ Transform:
   m_Children:
   - {fileID: 1230257671}
   - {fileID: 1512039791}
-  - {fileID: 685265064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &796329896 stripped
@@ -38658,6 +38607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 1155928637}
+  _upgrades: {fileID: 853122347}
   _playerHPText: {fileID: 244211075}
   _playerLevelText: {fileID: 929673136}
   _playerCoinsText: {fileID: 2133766093}
@@ -45191,6 +45141,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4715545187306412, guid: eaf00e58f8a484c37bef75eb300e4645, type: 3}
   m_PrefabInstance: {fileID: 272970440}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1767344125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767344126}
+  - component: {fileID: 1767344127}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1767344126
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767344125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1946695820}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1767344127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767344125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683b70c79118d2340b92f9c2a8bbd2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeItems:
+  - {fileID: 11400000, guid: 6b4afc9c2c8d3e840a8843fb61ee116e, type: 2}
+  - {fileID: 11400000, guid: a15ee7a272d3d4e4b92388ddca404493, type: 2}
+  numberOfUpgradesToSpawn: 3
+  _playerController: {fileID: 1155928637}
+  _levelUIManager: {fileID: 1512039792}
 --- !u!1001 &1769025456
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49449,7 +49453,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1767344126}
   m_Father: {fileID: 853122348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -54580,7 +54585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 934718771495294994, guid: dde1a20b8f00d7b46aa4586e60afcf5b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4928059470772907347, guid: dde1a20b8f00d7b46aa4586e60afcf5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -54901,7 +54906,11 @@ PrefabInstance:
     - target: {fileID: 3621494352983870489, guid: e653b382341fb7a4c8bc8d056f8ec998, type: 3}
       propertyPath: _upgradeManager
       value: 
-      objectReference: {fileID: 685265065}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3621494352983870489, guid: e653b382341fb7a4c8bc8d056f8ec998, type: 3}
+      propertyPath: _upgradeSpawner
+      value: 
+      objectReference: {fileID: 1767344127}
     - target: {fileID: 7252082888718511876, guid: e653b382341fb7a4c8bc8d056f8ec998, type: 3}
       propertyPath: m_Name
       value: Player
@@ -54929,7 +54938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4229592996559483138, guid: 2e45f1582a28d104295ccccb998fc7b0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5748598342880943649, guid: 2e45f1582a28d104295ccccb998fc7b0, type: 3}
       propertyPath: m_LocalPosition.x

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _assaultRifle;
     [SerializeField] PlayerWeapon _weapon;
     [SerializeField] LevelUIManager _levelUIManager;
-    [SerializeField] UpgradeManager _upgradeManager;
+    [SerializeField] UpgradeSpawner _upgradeSpawner;
     [SerializeField] LayerMask _enemyLayer;
     [SerializeField] LineRenderer _detectionRangeCircle;
     private int _maxHP = 1000;
@@ -217,7 +217,8 @@ public class PlayerController : MonoBehaviour
             PlayerLevel++;
             PlayerLevelXP -= PlayerLevelMaxXP;
             PlayerLevelMaxXP += 25;
-            _upgradeManager.SpawnRandomUpgrades();
+            _levelUIManager.OpenUpgrades();
+            _upgradeSpawner.SpawnRandomUpgrades();
         }
         _levelUIManager.UpdatePlayerLevel(PlayerLevel);
         _levelUIManager.UpdatePlayerXP(PlayerLevelXP, PlayerLevelMaxXP);
@@ -248,6 +249,8 @@ public class PlayerController : MonoBehaviour
     public void IncreaseHealth(int value)
     {
         _maxHP += value;
+        CurrentHP += value;
+        _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
     }
     IEnumerator SwitchWeapons()
     {

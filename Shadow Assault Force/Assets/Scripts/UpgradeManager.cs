@@ -7,7 +7,8 @@ public class UpgradeManager : MonoBehaviour
     public UpgradeItem[] upgradeItems;
     public int numberOfUpgradesToSpawn = 3;
     public float spawnRadius = 5f;
-    [SerializeField] Canvas _canvas;
+    
+    
 
 
     public void SpawnRandomUpgrades()
