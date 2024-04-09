@@ -1862,16 +1862,23 @@ MonoBehaviour:
   _pistol: {fileID: 4408674607310337578}
   _assaultRifle: {fileID: 1405952003040844178}
   _weapon: {fileID: 1677902721913806690}
+  _levelUIManager: {fileID: 0}
+  _upgradeSpawner: {fileID: 0}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 8
   _detectionRangeCircle: {fileID: 8325612128049525083}
   CurrentHP: 0
+  Damage: 2
   _detectionRange: 1.5
   currentEnemy: 0
   _moveSpeed: 1
   _rotationSpeed: 30
   _isMoving: 0
+  LevelCoins: 0
+  PlayerLevel: 1
+  PlayerLevelXP: 0
+  PlayerLevelMaxXP: 0
   Level: 0
 --- !u!54 &7699703810326180931
 Rigidbody:
