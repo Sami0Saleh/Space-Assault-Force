@@ -181,11 +181,9 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 512
   _isRanged: 1
   _isBigAnkleGrabber: 0
+  _isLittelAnkleGrabber: 0
   _currentHp: 0
   Damage: 2
   enemyIsDead: 0
