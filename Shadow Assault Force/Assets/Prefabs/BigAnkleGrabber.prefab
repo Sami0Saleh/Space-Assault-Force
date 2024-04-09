@@ -658,11 +658,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4737371996628036674}
-  - component: {fileID: 2081686426183900197}
-  - component: {fileID: 2315427205986503122}
   m_Layer: 0
   m_Name: Bone.019
-  m_TagString: Grabber
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -683,41 +681,6 @@ Transform:
   - {fileID: 6062436047927650146}
   m_Father: {fileID: 3330012888542806538}
   m_LocalEulerAnglesHint: {x: -24.059666, y: 9.71565, z: 24.358767}
---- !u!65 &2081686426183900197
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182170547708845490}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.00077741867, y: 0.00093950005, z: 0.0010296803}
-  m_Center: {x: 0.00020210638, y: 0.00007602387, z: 0.000331734}
---- !u!114 &2315427205986503122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182170547708845490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1504441c90a609a43a57a234ffc6f5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyController: {fileID: 7222386520969438949}
-  Damage: 2
 --- !u!1 &1199409915469412839
 GameObject:
   m_ObjectHideFlags: 0
@@ -2576,7 +2539,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5748598342880943649}
-  - component: {fileID: 7222386520969438949}
   - component: {fileID: 2305279526839102944}
   - component: {fileID: 7606148076535147314}
   - component: {fileID: 1560534851181172463}
@@ -2605,39 +2567,6 @@ Transform:
   - {fileID: 4191618009201982217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7222386520969438949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4229592996559483138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe11cf1f209c44b4bbe219e084e6eaf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7606148076535147314}
-  _droppableObjectPrefab: {fileID: 7093976295188696494, guid: de282b1496590d045acebd140f8b02a1, type: 3}
-  _enemyWeapon: {fileID: 0}
-  _player:
-    serializedVersion: 2
-    m_Bits: 128
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  _isRanged: 0
-  _isBigAnkleGrabber: 1
-  _isLittelAnkleGrabber: 0
-  _currentHp: 0
-  Damage: 5
-  enemyIsDead: 0
-  isAttacking: 0
-  detectionRange: 3
-  attackRange: 0.5
-  moveSpeed: 1
-  rotationSpeed: 2
-  isAttackFinished: 1
 --- !u!114 &2305279526839102944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2650,9 +2579,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac2a5fe3d0ff69409801716f715a5ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyController: {fileID: 7222386520969438949}
   _littelAnkleGrabberPrefab: {fileID: 7333000809852329301, guid: 2e8379651fa313a408bdd2ec6df151ef, type: 3}
-  _playerController: {fileID: 0}
+  animator: {fileID: 7606148076535147314}
+  _player:
+    serializedVersion: 2
+    m_Bits: 128
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _currentHp: 0
+  Damage: 5
+  enemyIsDead: 0
+  isAttacking: 0
+  detectionRange: 3
+  attackRange: 0.2
+  moveSpeed: 0.5
+  rotationSpeed: 2
+  isAttackFinished: 1
 --- !u!95 &7606148076535147314
 Animator:
   serializedVersion: 5

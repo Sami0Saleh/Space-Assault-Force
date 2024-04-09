@@ -13,13 +13,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _assaultRifle;
     [SerializeField] PlayerWeapon _weapon;
     [SerializeField] LevelUIManager _levelUIManager;
-    [SerializeField] UpgradeManager _upgradeManager;
+    [SerializeField] UpgradeSpawner _upgradeSpawner;
     [SerializeField] LayerMask _enemyLayer;
     [SerializeField] LineRenderer _detectionRangeCircle;
     private int _maxHP = 1000;
     public int CurrentHP;
     public int Damage = 2;
     private GameObject _currentEnemy;
+    private EnemyController _enemyController;
     [SerializeField] float _detectionRange;
     [SerializeField] bool currentEnemy;
     
@@ -166,6 +167,7 @@ public class PlayerController : MonoBehaviour
                     closestDistance = distance;
                     _currentEnemy = col.gameObject;
                     currentEnemy = true;
+                    _enemyController = col.GetComponent<EnemyController>();
                     transform.LookAt(_currentEnemy.transform);
                 }
                 
@@ -178,20 +180,19 @@ public class PlayerController : MonoBehaviour
             
         }
     }
-    public void MeleeTakeDamage(Grabber grabber)
+    public void TakeMeleeDamage(int damage)
     {
-        CurrentHP -= grabber.Damage;
+        CurrentHP -= damage;
         if (CurrentHP <= 0)
         {
             IsplayerDead = true;
             Die();
         }
         _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
-        grabber.FinishAttack();
     }
-    public void RangeTakeDamage()
+    public void TakeRangeDamage(int damage)
     {
-        CurrentHP -= 2;
+        CurrentHP -= damage;
         if (CurrentHP <= 0)
         {
             IsplayerDead = true;
@@ -217,7 +218,8 @@ public class PlayerController : MonoBehaviour
             PlayerLevel++;
             PlayerLevelXP -= PlayerLevelMaxXP;
             PlayerLevelMaxXP += 25;
-            _upgradeManager.SpawnRandomUpgrades();
+            _levelUIManager.OpenUpgrades();
+            _upgradeSpawner.SpawnRandomUpgrades();
         }
         _levelUIManager.UpdatePlayerLevel(PlayerLevel);
         _levelUIManager.UpdatePlayerXP(PlayerLevelXP, PlayerLevelMaxXP);
@@ -225,20 +227,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Grabber"))
-        {
-            Grabber grabber = other.GetComponent<Grabber>();
-            if (grabber != null)
-            {
-                MeleeTakeDamage(grabber);
-            }
-        }
         if (other.tag == "Coin")
         {
             LevelCoins++;
             PlayerLevelXP++;
             _levelUIManager.UpdatePlayerCoins(LevelCoins);
             UpdatePlayerLevel();
+        }
+        if (other.tag == "bullet")
+        {
+            TakeRangeDamage(_enemyController.Damage);
         }
     }
     public void IncreaseDamage(int value)
@@ -248,6 +246,8 @@ public class PlayerController : MonoBehaviour
     public void IncreaseHealth(int value)
     {
         _maxHP += value;
+        CurrentHP += value;
+        _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
     }
     IEnumerator SwitchWeapons()
     {

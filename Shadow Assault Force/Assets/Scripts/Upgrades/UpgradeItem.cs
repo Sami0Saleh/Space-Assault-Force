@@ -11,22 +11,34 @@ public class UpgradeItem : ScriptableObject
     public UpgradeType upgradeType;
     public GameObject prefab;
     public int value;
+    private PlayerController _playerController;
+    private LevelUIManager _levelUIManager;
 
-    public void ApplyUpgrade(PlayerController player)
+    public void ApplyUpgrade()
     {
-        player = player.GetComponent<PlayerController>();
+        
         switch (upgradeType)
         {
             case UpgradeType.Damage:
-                player.IncreaseDamage(value);
+                _playerController.IncreaseDamage(value);
+                _levelUIManager.CloseUpgrades();
                 break;
             case UpgradeType.Health:
-                player.IncreaseHealth(value);
+                _playerController.IncreaseHealth(value);
+                _levelUIManager.CloseUpgrades();
                 break;
             default:
                 Debug.LogWarning("Unknown upgrade type: " + upgradeType);
                 break;
         }
+    }
+    public void SetPlayer(PlayerController player)
+    {
+        _playerController = player;
+    }
+    public void SetUIManager(LevelUIManager LevelUIManager)
+    {
+        _levelUIManager = LevelUIManager;
     }
 }
 public enum UpgradeType
