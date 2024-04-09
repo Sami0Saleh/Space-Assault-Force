@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public int CurrentHP;
     public int Damage = 2;
     private GameObject _currentEnemy;
+    private EnemyController _enemyController;
     [SerializeField] float _detectionRange;
     [SerializeField] bool currentEnemy;
     
@@ -166,6 +167,7 @@ public class PlayerController : MonoBehaviour
                     closestDistance = distance;
                     _currentEnemy = col.gameObject;
                     currentEnemy = true;
+                    _enemyController = col.GetComponent<EnemyController>();
                     transform.LookAt(_currentEnemy.transform);
                 }
                 
@@ -178,20 +180,19 @@ public class PlayerController : MonoBehaviour
             
         }
     }
-    public void MeleeTakeDamage(Grabber grabber)
+    public void TakeMeleeDamage(int damage)
     {
-        CurrentHP -= grabber.Damage;
+        CurrentHP -= damage;
         if (CurrentHP <= 0)
         {
             IsplayerDead = true;
             Die();
         }
         _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
-        grabber.FinishAttack();
     }
-    public void RangeTakeDamage()
+    public void TakeRangeDamage(int damage)
     {
-        CurrentHP -= 2;
+        CurrentHP -= damage;
         if (CurrentHP <= 0)
         {
             IsplayerDead = true;
@@ -226,20 +227,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Grabber"))
-        {
-            Grabber grabber = other.GetComponent<Grabber>();
-            if (grabber != null)
-            {
-                MeleeTakeDamage(grabber);
-            }
-        }
         if (other.tag == "Coin")
         {
             LevelCoins++;
             PlayerLevelXP++;
             _levelUIManager.UpdatePlayerCoins(LevelCoins);
             UpdatePlayerLevel();
+        }
+        if (other.tag == "bullet")
+        {
+            TakeRangeDamage(_enemyController.Damage);
         }
     }
     public void IncreaseDamage(int value)

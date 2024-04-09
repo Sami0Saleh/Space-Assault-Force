@@ -1,28 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
-public class EnemyController : MonoBehaviour
+
+public class LittelGrabberController : MonoBehaviour
 {
-    private GameObject _playerController;
+    private GameObject _playerGameObject;
+    private PlayerController _playerController;
     [SerializeField] Animator animator;
-    [SerializeField] GameObject _droppableObjectPrefab;
-    [SerializeField] EnemyWeapon _enemyWeapon;
     [SerializeField] LayerMask _player;
     [SerializeField] LayerMask obstacleLayer;
-    [SerializeField] bool _isRanged;
-    [SerializeField] bool _isBigAnkleGrabber;
-    [SerializeField] bool _isLittelAnkleGrabber;
+    [SerializeField] GameObject _droppableObjectPrefab;
 
     private int _maxHp = 5;
     public int _currentHp;
-    public int Damage = 2;
+    public int Damage = 3;
     public bool enemyIsDead = false;
     public bool isAttacking = false;
     public float detectionRange = 3f;
-    public float attackRange = 2f;
-    public float moveSpeed = 1f;
+    public float attackRange = 0.1f;
+    public float moveSpeed = 0.5f;
     public float rotationSpeed = 2f;
     public bool isAttackFinished = true;
     private bool isPlayerDetected;
@@ -40,7 +36,7 @@ public class EnemyController : MonoBehaviour
     }
     private void enemeyState()
     {
-        if(isAttackFinished)
+        if (isAttackFinished)
         {
             animator.SetBool("isAttacking", false);
         }
@@ -62,28 +58,21 @@ public class EnemyController : MonoBehaviour
             if (col.CompareTag("Player"))
             {
                 isPlayerDetected = true;
-                _playerController = col.gameObject;
+                _playerGameObject = col.gameObject;
+                _playerController = col.GetComponent<PlayerController>();
                 break;
             }
         }
     }
     public void MoveTowardsPlayer()
     {
-        if (_isBigAnkleGrabber)
-        {
-            attackRange = 0.1f;
-        }
-        else if (_isLittelAnkleGrabber)
-        {
-            attackRange = 0.07f;
-        }
         // Rotate towards the player
-        Vector3 direction = (_playerController.transform.position - transform.position).normalized;
+        Vector3 direction = (_playerGameObject.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
 
         // Move towards the player
-        float distanceToPlayer = Vector3.Distance(transform.position, _playerController.transform.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, _playerGameObject.transform.position);
         if (distanceToPlayer > attackRange)
         {
             // Check for obstacles in front of the enemy
@@ -94,18 +83,13 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            if (_isRanged && _playerController != null)
-            {
-                RangeAttackPlayer();
-            }
-            else if (!_isRanged && _playerController != null)
+            if (_playerGameObject != null)
             {
                 isAttackFinished = false;
                 animator.SetBool("isAttacking", true);
             }
             else
             {
-                _enemyWeapon.EndShot();
                 isAttacking = false;
             }
         }
@@ -119,30 +103,13 @@ public class EnemyController : MonoBehaviour
         }
         return false;
     }
-    public void RangeAttackPlayer()
+    public void GotHit(int damage)
     {
-        isAttacking = true;
-        _enemyWeapon.StartShot();
-    }
-    public void GotHit()
-    {
-        _currentHp--;
+        _currentHp -= damage;
         if (_currentHp <= 0)
         {
-            if (!_isBigAnkleGrabber)
-            {
-                Die();
-            }
+            Die();
         }
-    }
-    public void Die()
-    {
-        if (!_isBigAnkleGrabber)
-        {
-            PlayerController.EnemyCount--;
-            DropObjects();
-        }
-        Destroy(gameObject);
     }
     void DropObjects()
     {
@@ -152,9 +119,36 @@ public class EnemyController : MonoBehaviour
 
         for (int i = 0; i < numObjectsToDrop; i++)
         {
-            
-            Vector3 dropPosition = new Vector3(transform.position.x + Random.Range(0.01f, 0.3f), -0.461f, transform.position.z + Random.Range(0.01f,0.3f));
+
+            Vector3 dropPosition = new Vector3(transform.position.x + Random.Range(0.01f, 0.3f), -0.461f, transform.position.z + Random.Range(0.01f, 0.3f));
             Instantiate(_droppableObjectPrefab, dropPosition, Quaternion.identity);
+        }
+    }
+    public void Die()
+    {
+        PlayerController.EnemyCount--;
+        DropObjects();
+        Destroy(gameObject);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            _playerController.TakeMeleeDamage(Damage);
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            _playerController.TakeMeleeDamage(Damage);
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "bullet")
+        {
+            GotHit(_playerController.Damage);
         }
     }
 }
