@@ -33,6 +33,9 @@ public class Grenade : MonoBehaviour
         // Apply initial velocity to the Rigidbody
         _rb.velocity = velocity * speed;
     }
+
+
+
     /*private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);

@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
+    public Vector3 CamPosition;
+
     [SerializeField] Transform _playerTransform;
     [SerializeField] Transform _camTransform;
     [SerializeField] Animator _anim;
@@ -83,7 +85,7 @@ public class PlayerController : MonoBehaviour
         // Update camera position to follow the player
         if (_camTransform != null)
         {
-            _camTransform.position = transform.position + new Vector3(0f, 1.25f, -1f);
+            _camTransform.position = transform.position + CamPosition;
         }
         if (_moveDirection != Vector3.zero)
         {
