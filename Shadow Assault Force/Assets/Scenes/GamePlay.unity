@@ -54258,7 +54258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1677902721913806690, guid: e653b382341fb7a4c8bc8d056f8ec998, type: 3}
       propertyPath: FireRate
-      value: 1.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3621494352983870489, guid: e653b382341fb7a4c8bc8d056f8ec998, type: 3}
       propertyPath: _camTransform
