@@ -9,7 +9,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] GameObject _bullet;
 
     [SerializeField] float _bulletRange;
-    [SerializeField] float _fireRate;
+    public float FireRate;
     [SerializeField] bool _isAutomatic;
     private int _ammoLeft = 1;
 
@@ -56,7 +56,7 @@ public class PlayerWeapon : MonoBehaviour
 
         if (_ammoLeft >= 0)
         {
-            Invoke("ResetShot", _fireRate);
+            Invoke("ResetShot", FireRate);
 
             if (!_isAutomatic)
             {

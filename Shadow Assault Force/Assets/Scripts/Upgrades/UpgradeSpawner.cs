@@ -8,17 +8,18 @@ public class UpgradeSpawner : MonoBehaviour
     public int numberOfUpgradesToSpawn = 3;
     [SerializeField] PlayerController _playerController;
     [SerializeField] LevelUIManager _levelUIManager;
-
+    private int _index1 = -1;
+    private int _index2 = -1;
     public void SpawnRandomUpgrades()
     {
         float offsetX = 200f;
-        for (int i = 0; i < numberOfUpgradesToSpawn; i++)
+        int i = 0;
+        int randomIndex = Random.Range(0, upgradeItems.Length);
+        while (i < numberOfUpgradesToSpawn)
         {
             if (i == 0)
             {
                 Vector3 randomPosition = transform.position;
-                //Vector3 randomPosition = playerPosition + Random.insideUnitSphere * spawnRadius;
-                int randomIndex = Random.Range(0, upgradeItems.Length);
                 GameObject upgradePrefab = Instantiate(upgradeItems[randomIndex].prefab, randomPosition, Quaternion.identity);
                 upgradePrefab.transform.SetParent(transform, true);
                 if (_playerController != null)
@@ -26,13 +27,13 @@ public class UpgradeSpawner : MonoBehaviour
                     upgradeItems[randomIndex].SetPlayer(_playerController);
                     upgradeItems[randomIndex].SetUIManager(_levelUIManager);
                 }
+                _index1 = randomIndex;
             }
             else if (i == 1)
             {
+                
                 float randomX = transform.position.x - offsetX;
                 Vector3 randomPosition = new Vector3(randomX, transform.position.y, transform.position.z);
-                //Vector3 randomPosition = playerPosition + Random.insideUnitSphere * spawnRadius;
-                int randomIndex = Random.Range(0, upgradeItems.Length);
                 GameObject upgradePrefab = Instantiate(upgradeItems[randomIndex].prefab, randomPosition, Quaternion.identity);
                 upgradePrefab.transform.SetParent(transform, true);
                 if (_playerController != null)
@@ -40,13 +41,12 @@ public class UpgradeSpawner : MonoBehaviour
                     upgradeItems[randomIndex].SetPlayer(_playerController);
                     upgradeItems[randomIndex].SetUIManager(_levelUIManager);
                 }
+                _index2 = randomIndex;
             }
             else if (i == 2)
             {
                 float randomX = transform.position.x + offsetX;
                 Vector3 randomPosition = new Vector3(randomX, transform.position.y, transform.position.z);
-                //Vector3 randomPosition = playerPosition + Random.insideUnitSphere * spawnRadius;
-                int randomIndex = Random.Range(0, upgradeItems.Length);
                 GameObject upgradePrefab = Instantiate(upgradeItems[randomIndex].prefab, randomPosition, Quaternion.identity);
                 upgradePrefab.transform.SetParent(transform, true);
                 if (_playerController != null)
@@ -55,7 +55,12 @@ public class UpgradeSpawner : MonoBehaviour
                     upgradeItems[randomIndex].SetUIManager(_levelUIManager);
                 }
             }
-            
+            i++;
+            randomIndex = Random.Range(0, upgradeItems.Length);
+            while (randomIndex == _index1 || randomIndex == _index2)
+            {
+                randomIndex = Random.Range(0, upgradeItems.Length);
+            }
         }
     }
 }

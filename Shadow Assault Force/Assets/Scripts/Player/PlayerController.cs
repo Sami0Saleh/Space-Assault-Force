@@ -249,6 +249,10 @@ public class PlayerController : MonoBehaviour
         CurrentHP += value;
         _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
     }
+    public void UpdateFireRate(float value)
+    {
+        _weapon.FireRate -= value;
+    }
     IEnumerator SwitchWeapons()
     {
 

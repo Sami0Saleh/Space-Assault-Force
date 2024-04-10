@@ -10,7 +10,7 @@ public class UpgradeItem : ScriptableObject
     public string description;
     public UpgradeType upgradeType;
     public GameObject prefab;
-    public int value;
+    public float value;
     private PlayerController _playerController;
     private LevelUIManager _levelUIManager;
 
@@ -20,11 +20,15 @@ public class UpgradeItem : ScriptableObject
         switch (upgradeType)
         {
             case UpgradeType.Damage:
-                _playerController.IncreaseDamage(value);
+                _playerController.IncreaseDamage((int)value);
                 _levelUIManager.CloseUpgrades();
                 break;
             case UpgradeType.Health:
-                _playerController.IncreaseHealth(value);
+                _playerController.IncreaseHealth((int)value);
+                _levelUIManager.CloseUpgrades();
+                break;
+            case UpgradeType.FireRate:
+                _playerController.UpdateFireRate(value);
                 _levelUIManager.CloseUpgrades();
                 break;
             default:
@@ -44,5 +48,6 @@ public class UpgradeItem : ScriptableObject
 public enum UpgradeType
 {
     Damage,
-    Health
+    Health,
+    FireRate
 }
