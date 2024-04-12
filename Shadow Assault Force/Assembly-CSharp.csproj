@@ -97,6 +97,7 @@
     <Compile Include="Assets\Scripts\Level\LevelEnd.cs" />
     <Compile Include="Assets\Scripts\Level\LevelUIManager.cs" />
     <Compile Include="Assets\Imported Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
     <Compile Include="Assets\Imported Assets\Environment\SpaceShip Environemnt\_Assets\LP Sets_Sci-fi Interior\Scripts\Helpers\TransInd.cs" />
   </ItemGroup>
   <ItemGroup>
