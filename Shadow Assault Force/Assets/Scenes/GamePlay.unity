@@ -2427,7 +2427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815702515555983607, guid: abc0f4f0365f2834c9dca36bf55707dc, type: 3}
       propertyPath: m_Name
-      value: Upgrade FireRate Button
+      value: FireRate SO Instance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5205,7 +5205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815702515555983607, guid: 9e48d68950a219546bc08ba3d634ba7e, type: 3}
       propertyPath: m_Name
-      value: Upgrade Damage Button
+      value: Damage SO Instance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10466,7 +10466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4815702515555983607, guid: 9ab74d6ceda2aee4eb133423439726d8, type: 3}
       propertyPath: m_Name
-      value: Upgrade HP Button
+      value: HP SO Instance
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49586,7 +49586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1937914605}
   m_Layer: 0
-  m_Name: Upgrade Prefabs
+  m_Name: Upgrade SO Instances
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
