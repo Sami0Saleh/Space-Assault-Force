@@ -6,8 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewUpgradeItem", menuName = "Upgrade Item")]
 public class UpgradeItem : ScriptableObject
 {
-    [SerializeField] Sprite[] UpgradeSpriteList;
-    [SerializeField] Sprite UpgradeSprite;
+    public int UpgradeIndex;
+    [SerializeField] public Sprite[] UpgradeSpriteList;
+    [SerializeField] public Sprite UpgradeSprite;
     public string itemName;
     public string description;
     public UpgradeType upgradeType;

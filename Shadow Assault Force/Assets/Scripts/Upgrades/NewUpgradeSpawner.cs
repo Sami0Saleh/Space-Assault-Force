@@ -10,18 +10,21 @@ public class NewUpgradeSpawner : MonoBehaviour
     [SerializeField] Canvas UpgradeUI;
     [SerializeField] Button[] UpgradeButtons;
 
+    //[SerializeField] Sprite 
     private PlayerController _playerController;
     private LevelUIManager _levelUIManager;
 
     private int _numOfUpgradesToSpawn = 3;
-    
+
 
     public void SetUpgradesInUI()
     {
+        int index = Random.Range(0, upgradeItems.Length);
         foreach (var button in UpgradeButtons)
         {
-            button.image = upgradeItems
+            button.image.sprite = upgradeItems[index].UpgradeSprite;
         }
+
     }
 
     public void OpenUpgradeUI()

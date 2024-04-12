@@ -30486,9 +30486,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9681344cdcc61df46a2b1a0f331fd810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeItems: []
+  upgradeItems:
+  - {fileID: 11400000, guid: a15ee7a272d3d4e4b92388ddca404493, type: 2}
+  - {fileID: 11400000, guid: 44a42763c37ff7647945e66049ad6f6f, type: 2}
+  - {fileID: 11400000, guid: 6b4afc9c2c8d3e840a8843fb61ee116e, type: 2}
   UpgradeUI: {fileID: 1178619889}
-  UpgradeButtons: []
+  UpgradeButtons:
+  - {fileID: 1480366640}
+  - {fileID: 915540774}
+  - {fileID: 1805686395}
 --- !u!4 &1181173458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4715545187306412, guid: eaf00e58f8a484c37bef75eb300e4645, type: 3}
