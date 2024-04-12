@@ -38,7 +38,7 @@ public class NewUpgradeSpawner : MonoBehaviour
         UpgradesSO[index].SetPlayer(_playerController);
         UpgradesSO[index].SetUIManager(_levelUIManager);
     }
-   
+
     public void OpenUpgradeUI()
     {
         SetUpgradesInUI();

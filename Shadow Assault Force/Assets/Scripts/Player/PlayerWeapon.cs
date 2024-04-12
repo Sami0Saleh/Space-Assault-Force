@@ -16,6 +16,7 @@ public class PlayerWeapon : MonoBehaviour
     private bool _canShoot = false;
     private bool _readyToShoot;
 
+
     private RaycastHit _rayHit;
 
     private void Awake()
@@ -49,7 +50,9 @@ public class PlayerWeapon : MonoBehaviour
 
             if (_rayHit.collider.gameObject.tag == "enemy")
             {
+                
                 Instantiate(_bullet, transform.position, Quaternion.LookRotation(direction));
+      
             }
         }
 

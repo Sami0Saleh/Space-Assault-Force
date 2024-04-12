@@ -11,6 +11,8 @@ public class BigAnkleGrabber : MonoBehaviour
     [SerializeField] LayerMask _player;
     [SerializeField] LayerMask obstacleLayer;
 
+    [SerializeField] AudioSource _BiteSound;
+
     private int _maxHp = 5;
     public int _currentHp;
     public int Damage = 5;
@@ -85,6 +87,10 @@ public class BigAnkleGrabber : MonoBehaviour
         {
             if (_playerGameObject != null)
             {
+                if (!_BiteSound.isPlaying)
+                {
+                    _BiteSound.Play();
+                }
                 isAttackFinished = false;
                 animator.SetBool("isAttacking", true);
             }
