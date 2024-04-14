@@ -15,6 +15,7 @@ TagManager:
   - bullet
   - Grabber
   - Coin
+  - grenade
   layers:
   - Default
   - TransparentFX

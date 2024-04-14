@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7627637355097386978}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: grenade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.071976, y: 1.3513876, z: -13.817089}
-  m_LocalScale: {x: 0.13920636, y: 0.13920636, z: 0.13920636}
+  m_LocalScale: {x: 0.07194324, y: 0.07194324, z: 0.07194324}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,9 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aee539e1f82d6746aa706ceb15b3cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 7627637355097386978}
-  speed: 10
-  arcHeight: 5
+  speed: 0.001
+  arcHeight: 0.5
+  gravity: 9.81
+  circleRadius: 0.1
 --- !u!33 &14560062670301465
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -130,7 +131,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7093976295188696494}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 10.09
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

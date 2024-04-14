@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyWeapon : MonoBehaviour
 {
     [SerializeField] EnemyController _enemyController;
-    [SerializeField] GameObject _bullet;
+    [SerializeField] Barrel _barrel;
 
     [SerializeField] float _bulletRange;
     [SerializeField] float _fireRate;
     [SerializeField] bool _isAutomatic;
     private int _ammoLeft = 1;
 
-    public bool _canShoot;
+    private bool _canShoot;
     private bool _readyToShoot;
 
     private RaycastHit _rayHit;
@@ -48,7 +48,7 @@ public class EnemyWeapon : MonoBehaviour
 
             if (_rayHit.collider.gameObject.tag == "Player")
             {
-                Instantiate(_bullet, transform.position, Quaternion.LookRotation(direction));
+                _barrel.Shoot(direction);
             }
         }
 

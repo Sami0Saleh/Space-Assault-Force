@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public int Damage = 2;
     private GameObject _currentEnemy;
     private EnemyController _enemyController;
+    private EnemyGrenadeController _enemyGrenadeController;
+    public Coins Coin;
     [SerializeField] float _detectionRange;
     [SerializeField] bool currentEnemy;
     
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1.0f;
         CurrentHP = _maxHP;
         PlayerLevelMaxXP = 25;
         _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
@@ -55,7 +58,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         IsplayerDead = false;
-        originalForward = transform.forward;
+        originalForward = transform.position;
         originalrotation = transform.rotation;
         _weaponIndex = 0;
         StartCoroutine(SwitchWeapons());
@@ -74,9 +77,13 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         
-        _moveDirection = (originalForward * verticalInput) + (transform.right * horizontalInput);
+        _moveDirection.x = (originalForward.x * horizontalInput);
+        _moveDirection.z = (originalForward.z * -verticalInput);
 
-
+        if (_moveDirection.magnitude > 0)
+        {
+            _moveDirection.Normalize();
+        }
         // Move the player forward or backward
         transform.Translate(_moveDirection * _moveSpeed * Time.deltaTime, Space.World);
 
@@ -105,14 +112,11 @@ public class PlayerController : MonoBehaviour
         }
         if (_currentEnemy != null)
         {
-            
             if (!_isMoving)
             {
                 _weapon.StartShot();
                 _anim.SetBool("isShooting", true);
             }
-            
-            
         }
         else
         {
@@ -168,16 +172,15 @@ public class PlayerController : MonoBehaviour
                     _currentEnemy = col.gameObject;
                     currentEnemy = true;
                     _enemyController = col.GetComponent<EnemyController>();
+                    _enemyGrenadeController = col.GetComponent<EnemyGrenadeController>();
                     transform.LookAt(_currentEnemy.transform);
                 }
-                
             }
         }
         else
         {
             _currentEnemy = null;
             currentEnemy = false;
-            
         }
     }
     public void TakeMeleeDamage(int damage)
@@ -199,7 +202,6 @@ public class PlayerController : MonoBehaviour
             Die();
         }
         _levelUIManager.UpdatePlayerHP(CurrentHP, _maxHP);
-
     }
     public void Die()
     {
@@ -212,7 +214,6 @@ public class PlayerController : MonoBehaviour
     }
     public void UpdatePlayerLevel()
     {
-        
         if (PlayerLevelXP >= PlayerLevelMaxXP)
         {
             PlayerLevel++;
@@ -229,6 +230,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Coin")
         {
+            Coin = other.GetComponent<Coins>();
             LevelCoins++;
             PlayerLevelXP++;
             _levelUIManager.UpdatePlayerCoins(LevelCoins);
@@ -237,6 +239,10 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "bullet")
         {
             TakeRangeDamage(_enemyController.Damage);
+        }
+        if (other.tag == "grenade")
+        {
+            TakeRangeDamage(_enemyGrenadeController.Damage);
         }
     }
     public void IncreaseDamage(int value)
@@ -255,9 +261,7 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator SwitchWeapons()
     {
-
         yield return new WaitForSeconds(0.1f);
-
 
         if (_weaponIndex == 0)
         {

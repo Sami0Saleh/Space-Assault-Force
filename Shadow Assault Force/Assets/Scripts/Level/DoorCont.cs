@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class DoorCont : MonoBehaviour {
     
@@ -79,8 +80,8 @@ public class DoorCont : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         
         if(!locked && PlayerController.EnemyCount <= 0){
-        
-            if(other.gameObject.tag == tagToCheck){
+
+            if (other.gameObject.tag == tagToCheck){
 
                 playDet = true;
                 

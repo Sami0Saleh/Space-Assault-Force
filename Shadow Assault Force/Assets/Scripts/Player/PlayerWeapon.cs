@@ -6,7 +6,7 @@ public class PlayerWeapon : MonoBehaviour
 {
 
     [SerializeField] PlayerController _playerController;
-    [SerializeField] GameObject _bullet;
+    [SerializeField] Barrel _barrel;
 
     [SerializeField] float _bulletRange;
     public float FireRate;
@@ -46,10 +46,9 @@ public class PlayerWeapon : MonoBehaviour
 
         if (Physics.Raycast(transform.position, direction, out _rayHit, _bulletRange))
         {
-
             if (_rayHit.collider.gameObject.tag == "enemy")
             {
-                Instantiate(_bullet, transform.position, Quaternion.LookRotation(direction));
+                _barrel.Shoot(direction);
             }
         }
 
