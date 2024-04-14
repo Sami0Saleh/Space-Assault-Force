@@ -1,29 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\",
+  "WorkspaceRootPath": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\upgrades\\upgradeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|c:\\users\\ratch\\onedrive\\desktop\\sami\u0027s project\\shadow-assault-force\\shadow assault force\\assets\\scripts\\cameramanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameramanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\CameraScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\CameraScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\upgrades\\upgradeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgrades\\upgradeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\player\\playerweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\player\\playerweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\upgrades\\upgradespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\upgrades\\upgradespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgrades\\upgradespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|c:\\users\\samis\\onedrive\\desktop\\shadow-assault-force\\shadow assault force\\assets\\scripts\\upgrades\\newupgradespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\upgrades\\newupgradespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgrades\\newupgradespawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|c:\\users\\samis\\onedrive\\desktop\\shadow-assault-force\\shadow assault force\\assets\\scripts\\level\\leveluimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\level\\leveluimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\level\\leveluimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A8EDBFB7-3849-A346-D75A-009CA14B2B04}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,85 +42,107 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LevelUIManager.cs",
-              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Level\\LevelUIManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Level\\LevelUIManager.cs",
-              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Level\\LevelUIManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Level\\LevelUIManager.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T18:32:06.288Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NewUpgradeSpawner.cs",
-              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\NewUpgradeSpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Upgrades\\NewUpgradeSpawner.cs",
-              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\NewUpgradeSpawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Upgrades\\NewUpgradeSpawner.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAQwCwAAAArAAAA",
+              "DocumentIndex": 0,
+              "Title": "CameraManager.cs",
+              "DocumentMoniker": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\CameraManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraManager.cs",
+              "ToolTip": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\CameraManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T18:11:06.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UpgradeSpawner.cs",
-              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\UpgradeSpawner.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Upgrades\\UpgradeSpawner.cs",
-              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\UpgradeSpawner.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Upgrades\\UpgradeSpawner.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwDYAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T18:11:06.497Z",
+              "WhenOpened": "2024-04-14T20:15:26.862Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PlayerWeapon.cs",
-              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Player\\PlayerWeapon.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerWeapon.cs",
-              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Player\\PlayerWeapon.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerWeapon.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAkAAAA",
+              "Title": "CameraScript.cs",
+              "DocumentMoniker": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\CameraScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraScript.cs",
+              "ToolTip": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\CameraScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraScript.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T18:11:06.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T20:15:09.674Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UpgradeItem.cs",
-              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\UpgradeItem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Upgrades\\UpgradeItem.cs",
-              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\UpgradeItem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Upgrades\\UpgradeItem.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwDIAAAAeAAAA",
+              "DocumentIndex": 6,
+              "Title": "LevelUIManager.cs",
+              "DocumentMoniker": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Level\\LevelUIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Level\\LevelUIManager.cs",
+              "ToolTip": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Level\\LevelUIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Level\\LevelUIManager.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T18:11:06.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T18:32:06.288Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "NewUpgradeSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\NewUpgradeSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Upgrades\\NewUpgradeSpawner.cs",
+              "ToolTip": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\NewUpgradeSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Upgrades\\NewUpgradeSpawner.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAQwCwAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T18:11:06.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpgradeSpawner.cs",
+              "DocumentMoniker": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\UpgradeSpawner.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Upgrades\\UpgradeSpawner.cs",
+              "ToolTip": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\UpgradeSpawner.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Upgrades\\UpgradeSpawner.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwDYAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T18:11:06.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlayerWeapon.cs",
+              "DocumentMoniker": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Player\\PlayerWeapon.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerWeapon.cs",
+              "ToolTip": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Player\\PlayerWeapon.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerWeapon.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T18:11:06.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UpgradeItem.cs",
+              "DocumentMoniker": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\UpgradeItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Upgrades\\UpgradeItem.cs",
+              "ToolTip": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Upgrades\\UpgradeItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Upgrades\\UpgradeItem.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAQwDIAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T18:11:06.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "DocumentMoniker": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerController.cs",
-              "ToolTip": "C:\\Users\\samis\\OneDrive\\Desktop\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Player\\PlayerController.cs",
+              "ToolTip": "C:\\Users\\ratch\\OneDrive\\Desktop\\sami\u0027s project\\Shadow-Assault-Force\\Shadow Assault Force\\Assets\\Scripts\\Player\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerController.cs",
               "ViewState": "AQIAAP8AAAAAAAAAAAAIwPUAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T18:11:06.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T18:11:06.497Z"
             }
           ]
         }
