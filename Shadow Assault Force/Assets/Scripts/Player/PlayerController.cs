@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
+    public Vector3 CamPosition;
+
     [SerializeField] Transform _playerTransform;
     [SerializeField] Transform _camTransform;
     [SerializeField] Animator _anim;
@@ -13,7 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _assaultRifle;
     [SerializeField] PlayerWeapon _weapon;
     [SerializeField] LevelUIManager _levelUIManager;
-    [SerializeField] UpgradeSpawner _upgradeSpawner;
+    //[SerializeField] UpgradeSpawner _upgradeSpawner;
+    [SerializeField] NewUpgradeSpawner _newUpgradeSpawner;
     [SerializeField] LayerMask _enemyLayer;
     [SerializeField] LineRenderer _detectionRangeCircle;
     private int _maxHP = 1000;
@@ -90,7 +93,7 @@ public class PlayerController : MonoBehaviour
         // Update camera position to follow the player
         if (_camTransform != null)
         {
-            _camTransform.position = transform.position + new Vector3(0f, 1.25f, -1f);
+            _camTransform.position = transform.position + CamPosition;
         }
         if (_moveDirection != Vector3.zero)
         {
@@ -216,11 +219,13 @@ public class PlayerController : MonoBehaviour
     {
         if (PlayerLevelXP >= PlayerLevelMaxXP)
         {
+            Debug.Log("Should Be Able to Level Up");
             PlayerLevel++;
             PlayerLevelXP -= PlayerLevelMaxXP;
             PlayerLevelMaxXP += 25;
-            _levelUIManager.OpenUpgrades();
-            _upgradeSpawner.SpawnRandomUpgrades();
+            //_levelUIManager.OpenUpgrades();
+            // _upgradeSpawner.SpawnRandomUpgrades();
+            _newUpgradeSpawner.OpenUpgradeUI();
         }
         _levelUIManager.UpdatePlayerLevel(PlayerLevel);
         _levelUIManager.UpdatePlayerXP(PlayerLevelXP, PlayerLevelMaxXP);

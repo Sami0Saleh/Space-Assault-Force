@@ -16,6 +16,7 @@ public class PlayerWeapon : MonoBehaviour
     private bool _canShoot = false;
     private bool _readyToShoot;
 
+
     private RaycastHit _rayHit;
 
     private void Awake()

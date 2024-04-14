@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598756be618c668498e1785b7f305495, type: 3}
   m_Name: UpgradeFireRate
   m_EditorClassIdentifier: 
+  UpgradeSprite: {fileID: 21300000, guid: b6b0cb54fab0caa4da22ba944f569c28, type: 3}
   itemName: FireRate
   description: upgrade the weapon fire rate
   upgradeType: 2

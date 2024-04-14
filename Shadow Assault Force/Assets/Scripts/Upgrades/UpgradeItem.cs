@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "NewUpgradeItem", menuName = "Upgrade Item")]
 public class UpgradeItem : ScriptableObject
 {
+
+    [SerializeField] public Sprite UpgradeSprite;
     public string itemName;
     public string description;
     public UpgradeType upgradeType;
@@ -20,14 +23,17 @@ public class UpgradeItem : ScriptableObject
         switch (upgradeType)
         {
             case UpgradeType.Damage:
+                Debug.Log("Upgrading Damage");
                 _playerController.IncreaseDamage((int)value);
                 _levelUIManager.CloseUpgrades();
                 break;
             case UpgradeType.Health:
+                Debug.Log("Upgrading Health");
                 _playerController.IncreaseHealth((int)value);
                 _levelUIManager.CloseUpgrades();
                 break;
             case UpgradeType.FireRate:
+                Debug.Log("Upgrading FireRate");
                 _playerController.UpdateFireRate(value);
                 _levelUIManager.CloseUpgrades();
                 break;

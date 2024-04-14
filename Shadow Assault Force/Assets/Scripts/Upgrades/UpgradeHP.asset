@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598756be618c668498e1785b7f305495, type: 3}
   m_Name: UpgradeHP
   m_EditorClassIdentifier: 
+  UpgradeSprite: {fileID: 21300000, guid: efcac3f7e2f11ff4098551d6165e0d5d, type: 3}
   itemName: HP
   description: Add 20 MaxHp
   upgradeType: 1
