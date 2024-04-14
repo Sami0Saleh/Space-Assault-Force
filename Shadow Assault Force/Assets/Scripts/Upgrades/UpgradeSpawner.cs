@@ -25,7 +25,7 @@ public class UpgradeSpawner : MonoBehaviour
                 if (_playerController != null)
                 {
                     upgradeItems[randomIndex].SetPlayer(_playerController);
-                    upgradeItems[randomIndex].SetUIManager(_levelUIManager);
+                    //upgradeItems[randomIndex].SetUIManager(_levelUIManager);
                 }
                 _index1 = randomIndex;
             }
@@ -39,7 +39,7 @@ public class UpgradeSpawner : MonoBehaviour
                 if (_playerController != null)
                 {
                     upgradeItems[randomIndex].SetPlayer(_playerController);
-                    upgradeItems[randomIndex].SetUIManager(_levelUIManager);
+                    //upgradeItems[randomIndex].SetUIManager(_levelUIManager);
                 }
                 _index2 = randomIndex;
             }
@@ -52,7 +52,7 @@ public class UpgradeSpawner : MonoBehaviour
                 if (_playerController != null)
                 {
                     upgradeItems[randomIndex].SetPlayer(_playerController);
-                    upgradeItems[randomIndex].SetUIManager(_levelUIManager);
+                    //upgradeItems[randomIndex].SetUIManager(_levelUIManager);
                 }
             }
             i++;

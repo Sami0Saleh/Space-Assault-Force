@@ -15,7 +15,7 @@ public class UpgradeItem : ScriptableObject
     public GameObject prefab;
     public float value;
     private PlayerController _playerController;
-    private LevelUIManager _levelUIManager;
+    private NewUpgradeSpawner _newUpgradeSpawner;
 
     public void ApplyUpgrade()
     {
@@ -25,17 +25,17 @@ public class UpgradeItem : ScriptableObject
             case UpgradeType.Damage:
                 Debug.Log("Upgrading Damage");
                 _playerController.IncreaseDamage((int)value);
-                _levelUIManager.CloseUpgrades();
+                _newUpgradeSpawner.CloseUpgradeUI();
                 break;
             case UpgradeType.Health:
                 Debug.Log("Upgrading Health");
                 _playerController.IncreaseHealth((int)value);
-                _levelUIManager.CloseUpgrades();
+                _newUpgradeSpawner.CloseUpgradeUI();
                 break;
             case UpgradeType.FireRate:
                 Debug.Log("Upgrading FireRate");
                 _playerController.UpdateFireRate(value);
-                _levelUIManager.CloseUpgrades();
+                _newUpgradeSpawner.CloseUpgradeUI();
                 break;
             default:
                 Debug.LogWarning("Unknown upgrade type: " + upgradeType);
@@ -46,9 +46,9 @@ public class UpgradeItem : ScriptableObject
     {
         _playerController = player;
     }
-    public void SetUIManager(LevelUIManager LevelUIManager)
+    public void SetUIManager(NewUpgradeSpawner newUpgradeSpawner)
     {
-        _levelUIManager = LevelUIManager;
+        _newUpgradeSpawner = newUpgradeSpawner;
     }
 }
 public enum UpgradeType

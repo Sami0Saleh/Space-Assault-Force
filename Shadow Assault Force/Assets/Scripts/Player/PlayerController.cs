@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
             PlayerLevel++;
             PlayerLevelXP -= PlayerLevelMaxXP;
             PlayerLevelMaxXP += 25;
-            //_levelUIManager.OpenUpgrades();
+            //_newUpgradeSpawner.OpenUpgrades();
             // _upgradeSpawner.SpawnRandomUpgrades();
             _newUpgradeSpawner.OpenUpgradeUI();
         }

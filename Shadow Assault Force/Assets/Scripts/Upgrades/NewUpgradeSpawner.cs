@@ -13,22 +13,28 @@ public class NewUpgradeSpawner : MonoBehaviour
     [SerializeField] Button[] oldUpgradeButtons;
 
     [SerializeField] PlayerController _playerController;
-    [SerializeField] LevelUIManager _levelUIManager;
 
     private int _numOfUpgradesToSpawn = 3;
-
+    private int _index1 = -1;
+    private int _index2 = -1;
 
     public void SetUpgradesInUI()
     {
-        
+        int index = Random.Range(0, oldUpgradeButtons.Length);
+        _index1 = index;
         foreach (var button in newUpgradeButtons)
         {
-            int index = Random.Range(0, oldUpgradeButtons.Length);
             SetUpgrade(index);
             button.image.sprite = UpgradesSO[index].UpgradeSprite;
             button.onClick.RemoveAllListeners();
             button.onClick = oldUpgradeButtons[index].onClick;
             button.onClick.AddListener(CloseUpgradeUI);
+            index = Random.Range(0, oldUpgradeButtons.Length);
+            while (index == _index1 || index == _index2)
+            {
+                index = Random.Range(0, oldUpgradeButtons.Length);
+            }
+            _index2 = index;
         }
 
     }
@@ -36,7 +42,7 @@ public class NewUpgradeSpawner : MonoBehaviour
     public void SetUpgrade(int index)
     {
         UpgradesSO[index].SetPlayer(_playerController);
-        UpgradesSO[index].SetUIManager(_levelUIManager);
+        UpgradesSO[index].SetUIManager(this);
     }
 
     public void OpenUpgradeUI()

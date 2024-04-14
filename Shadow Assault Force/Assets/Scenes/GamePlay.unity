@@ -2283,6 +2283,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1937914605}
     m_Modifications:
+    - target: {fileID: 2561406426650426597, guid: abc0f4f0365f2834c9dca36bf55707dc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ApplyUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 3714058901909357069, guid: abc0f4f0365f2834c9dca36bf55707dc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4994,6 +4998,10 @@ PrefabInstance:
     - target: {fileID: 2561406426650426597, guid: 9e48d68950a219546bc08ba3d634ba7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561406426650426597, guid: 9e48d68950a219546bc08ba3d634ba7e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ApplyUpgrade
       objectReference: {fileID: 0}
     - target: {fileID: 2561406426650426597, guid: 9e48d68950a219546bc08ba3d634ba7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -10260,6 +10268,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1937914605}
     m_Modifications:
+    - target: {fileID: 2561406426650426597, guid: 9ab74d6ceda2aee4eb133423439726d8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ApplyUpgrade
+      objectReference: {fileID: 0}
     - target: {fileID: 3714058901909357069, guid: 9ab74d6ceda2aee4eb133423439726d8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -30558,11 +30570,10 @@ MonoBehaviour:
   - {fileID: 915540774}
   - {fileID: 1805686395}
   oldUpgradeButtons:
-  - {fileID: 1469520312}
-  - {fileID: 1068966561}
   - {fileID: 1644431496}
+  - {fileID: 1068966561}
+  - {fileID: 1469520312}
   _playerController: {fileID: 1155928637}
-  _levelUIManager: {fileID: 1512039792}
 --- !u!4 &1181173458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4715545187306412, guid: eaf00e58f8a484c37bef75eb300e4645, type: 3}
