@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyWeapon : MonoBehaviour
 {
-    [SerializeField] EnemyController _enemyController;
+    [SerializeField] EnemyShooterController _enemyShooterController;
     [SerializeField] Barrel _barrel;
 
     [SerializeField] float _bulletRange;
@@ -41,7 +41,7 @@ public class EnemyWeapon : MonoBehaviour
     private void PerformShot()
     {
         _readyToShoot = false;
-        Vector3 direction = _enemyController.transform.forward;
+        Vector3 direction = _enemyShooterController.transform.forward;
 
         if (Physics.Raycast(transform.position, direction, out _rayHit, _bulletRange))
         {

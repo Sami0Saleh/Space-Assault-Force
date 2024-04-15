@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigAnkleGrabber : MonoBehaviour
+public class BigAnkleGrabber : MonoBehaviour, IEnemy
 {
     [SerializeField] GameObject _littelAnkleGrabberPrefab;
-    private GameObject _playerGameObject;
+    private Transform _playerTransform;
     private PlayerController _playerController;
     [SerializeField] Animator animator;
     [SerializeField] LayerMask _player;
@@ -60,8 +60,7 @@ public class BigAnkleGrabber : MonoBehaviour
             if (col.CompareTag("Player"))
             {
                 isPlayerDetected = true;
-                _playerGameObject = col.gameObject;
-                _playerController = col.GetComponent<PlayerController>();
+               
                 break;
             }
         }
@@ -69,12 +68,12 @@ public class BigAnkleGrabber : MonoBehaviour
     public void MoveTowardsPlayer()
     {
         // Rotate towards the player
-        Vector3 direction = (_playerGameObject.transform.position - transform.position).normalized;
+        Vector3 direction = (_playerTransform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
 
         // Move towards the player
-        float distanceToPlayer = Vector3.Distance(transform.position, _playerGameObject.transform.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, _playerTransform.position);
         if (distanceToPlayer > attackRange)
         {
             // Check for obstacles in front of the enemy
@@ -85,7 +84,7 @@ public class BigAnkleGrabber : MonoBehaviour
         }
         else
         {
-            if (_playerGameObject != null)
+            if (_playerTransform != null)
             {
                 if (!_BiteSound.isPlaying)
                 {
@@ -147,5 +146,14 @@ public class BigAnkleGrabber : MonoBehaviour
         {
             GotHit(_playerController.Damage);
         }
+    }
+    public void SetPlayer(PlayerController player)
+    {
+        _playerController = player;
+    }
+
+    public void SetPlayerTransform(Transform playerTransform)
+    {
+        _playerTransform = playerTransform;
     }
 }

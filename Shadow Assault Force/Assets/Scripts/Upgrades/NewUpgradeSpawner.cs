@@ -14,7 +14,6 @@ public class NewUpgradeSpawner : MonoBehaviour
 
     [SerializeField] PlayerController _playerController;
 
-    private int _numOfUpgradesToSpawn = 3;
     private int _index1 = -1;
     private int _index2 = -1;
 

@@ -108,7 +108,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4928059470772907347}
   - component: {fileID: 4690335298974332514}
-  - component: {fileID: 5165824664263659065}
+  - component: {fileID: 4176203228750330279}
+  - component: {fileID: 9105364849497538334}
   - component: {fileID: 4610714813500203874}
   - component: {fileID: 8058883894513477514}
   - component: {fileID: 609240539806281978}
@@ -160,7 +161,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5165824664263659065
+--- !u!114 &4176203228750330279
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,30 +170,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 934718771495294994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe11cf1f209c44b4bbe219e084e6eaf4, type: 3}
+  m_Script: {fileID: 11500000, guid: c84cd36de7d39ed4a8c07de21440f036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4690335298974332514}
   _droppableObjectPrefab: {fileID: 7779213722011517243, guid: 261023df9f8278342b681623deb63cec, type: 3}
   _enemyWeapon: {fileID: 3232435450289986384}
-  _player:
-    serializedVersion: 2
-    m_Bits: 128
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
-  _isRanged: 1
-  _isBigAnkleGrabber: 0
-  _isLittelAnkleGrabber: 0
   _currentHp: 0
-  Damage: 2
+  Damage: 7
   enemyIsDead: 0
   isAttacking: 0
   detectionRange: 3
-  attackRange: 1
+  attackRange: 2
   moveSpeed: 1
   rotationSpeed: 2
-  isAttackFinished: 1
+--- !u!114 &9105364849497538334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934718771495294994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c84cd36de7d39ed4a8c07de21440f036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4690335298974332514}
+  _droppableObjectPrefab: {fileID: 7779213722011517243, guid: 261023df9f8278342b681623deb63cec, type: 3}
+  _enemyWeapon: {fileID: 3232435450289986384}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _currentHp: 0
+  Damage: 7
+  enemyIsDead: 0
+  isAttacking: 0
+  detectionRange: 3
+  attackRange: 2
+  moveSpeed: 1
+  rotationSpeed: 2
 --- !u!195 &4610714813500203874
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2185,7 +2205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c9daf1887cfb847a310e5fc3e5603a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyController: {fileID: 5165824664263659065}
+  _enemyShooterController: {fileID: 9105364849497538334}
   _barrel: {fileID: 5832632447485449546}
   _bulletRange: 20
   _fireRate: 1

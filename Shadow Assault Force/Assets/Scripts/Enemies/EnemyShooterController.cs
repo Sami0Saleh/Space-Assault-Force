@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGrenadeController : MonoBehaviour, IEnemy
+public class EnemyShooterController : MonoBehaviour, IEnemy
 {
-    public Transform _playerTransform;
+    private Transform _playerTransform;
     private PlayerController _playerController;
-    [SerializeField] EnemyWeaponGrenade _enemyWeaponGrenade;
     [SerializeField] Animator animator;
     [SerializeField] GameObject _droppableObjectPrefab;
+    [SerializeField] EnemyWeapon _enemyWeapon;
     [SerializeField] LayerMask obstacleLayer;
 
     private int _maxHp = 5;
@@ -60,12 +60,12 @@ public class EnemyGrenadeController : MonoBehaviour, IEnemy
     public void MoveTowardsPlayer()
     {
         // Rotate towards the player
-        Vector3 direction = (_playerTransform.position - transform.position).normalized;
+        Vector3 direction = (_playerTransform.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
 
         // Move towards the player
-        float distanceToPlayer = Vector3.Distance(transform.position, _playerTransform.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, _playerTransform.transform.position);
         if (distanceToPlayer > attackRange)
         {
             // Check for obstacles in front of the enemy
@@ -78,11 +78,12 @@ public class EnemyGrenadeController : MonoBehaviour, IEnemy
         {
             if (_playerTransform != null)
             {
-                ShootGrenade();
+                RangeAttackPlayer();
             }
+            
             else
             {
-                _enemyWeaponGrenade.EndShot();
+                _enemyWeapon.EndShot();
                 isAttacking = false;
             }
         }
@@ -96,19 +97,11 @@ public class EnemyGrenadeController : MonoBehaviour, IEnemy
         }
         return false;
     }
-    public void ShootGrenade()
+    public void RangeAttackPlayer()
     {
         isAttacking = true;
-        _enemyWeaponGrenade.StartShot();
+        _enemyWeapon.StartShot();
     }
-
-    /*public void DrawLandingCircle(Vector3 targetPosition)
-    {
-        // Draw a red circle on the ground at the target position
-        float radius = 0.1f; // Adjust the radius of the circle
-        Vector3 circlePosition = new Vector3(targetPosition.x, -0.45f, targetPosition.z);
-        DebugDraw.Circle(circlePosition, Vector3.up, Color.red, radius);
-    }*/
     public void GotHit(int damage)
     {
         _currentHp -= damage;
@@ -131,8 +124,8 @@ public class EnemyGrenadeController : MonoBehaviour, IEnemy
 
         for (int i = 0; i < numObjectsToDrop; i++)
         {
-
-            Vector3 dropPosition = new Vector3(transform.position.x + Random.Range(0.01f, 0.3f), -0.461f, transform.position.z + Random.Range(0.01f, 0.3f));
+            
+            Vector3 dropPosition = new Vector3(transform.position.x + Random.Range(0.01f, 0.3f), -0.461f, transform.position.z + Random.Range(0.01f,0.3f));
             Instantiate(_droppableObjectPrefab, dropPosition, Quaternion.identity);
         }
     }
@@ -143,6 +136,7 @@ public class EnemyGrenadeController : MonoBehaviour, IEnemy
             GotHit(_playerController.Damage);
         }
     }
+
     public void SetPlayer(PlayerController player)
     {
         _playerController = player;

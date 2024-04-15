@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
     public Vector3 CamPosition;
-
+    [SerializeField] List<IEnemy> _enemies = new List<IEnemy>();
     [SerializeField] Transform _playerTransform;
     [SerializeField] Transform _camTransform;
     [SerializeField] Animator _anim;
@@ -19,33 +19,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] NewUpgradeSpawner _newUpgradeSpawner;
     [SerializeField] LayerMask _enemyLayer;
     [SerializeField] LineRenderer _detectionRangeCircle;
+    [SerializeField] float _detectionRange;
+    [SerializeField] float _moveSpeed;
+    [SerializeField] float _rotationSpeed;
+    [SerializeField] bool _isMoving = false;
+
+    private GameObject _currentEnemy;
+    public Coins Coin;
+
     private int _maxHP = 1000;
     public int CurrentHP;
     public int Damage = 2;
-    private GameObject _currentEnemy;
-    private EnemyController _enemyController;
-    private EnemyGrenadeController _enemyGrenadeController;
-    public Coins Coin;
-    [SerializeField] float _detectionRange;
-    [SerializeField] bool currentEnemy;
-    
-
-    [SerializeField] float _moveSpeed;
-    [SerializeField] float _rotationSpeed; 
     private Vector3 _moveDirection;
     private Vector3 originalForward;
     private Quaternion originalrotation;
-    [SerializeField] bool _isMoving = false;
     public int LevelCoins = 0;
     public int PlayerLevel = 1;
     public int PlayerLevelXP = 0;
     public int PlayerLevelMaxXP;
-    
-
     private int _weaponIndex;
     public int Level = 0;
     public static int EnemyCount = 1;
-
     public static bool IsplayerDead;
 
     private void Awake()
@@ -117,6 +111,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!_isMoving)
             {
+                transform.LookAt(_currentEnemy.transform);
                 _weapon.StartShot();
                 _anim.SetBool("isShooting", true);
             }
@@ -162,9 +157,12 @@ public class PlayerController : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, _detectionRange, _enemyLayer);
 
+        // Clear the detectedEnemies list before populating it with new detections
+        _enemies.Clear();
+
         if (hitColliders.Length > 0)
         {
-            // Get the closest enemy
+            // Loop through all detected enemy colliders
             float closestDistance = Mathf.Infinity;
             foreach (Collider col in hitColliders)
             {
@@ -172,18 +170,38 @@ public class PlayerController : MonoBehaviour
                 if (distance < closestDistance)
                 {
                     closestDistance = distance;
+                    IEnemy enemyController = col.GetComponent<IEnemy>();
                     _currentEnemy = col.gameObject;
-                    currentEnemy = true;
-                    _enemyController = col.GetComponent<EnemyController>();
-                    _enemyGrenadeController = col.GetComponent<EnemyGrenadeController>();
-                    transform.LookAt(_currentEnemy.transform);
+                    if (enemyController != null)
+                    {
+                        _enemies.Add(enemyController);
+                    }
+                   
                 }
             }
         }
         else
         {
             _currentEnemy = null;
-            currentEnemy = false;
+        }
+    }
+    public void TakeDamageFromEnemies()
+    {
+        // Loop through all detected enemies and apply damage
+        foreach (IEnemy enemy in _enemies)
+        {
+            if (enemy != null)
+            {
+                if (enemy is EnemyShooterController)
+                {
+                    TakeRangeDamage((enemy as EnemyShooterController).Damage);
+                }
+                else if (enemy is EnemyGrenadeController)
+                {
+                    TakeRangeDamage((enemy as EnemyGrenadeController).Damage);
+                }
+                // Add more enemy types if needed
+            }
         }
     }
     public void TakeMeleeDamage(int damage)
@@ -241,13 +259,9 @@ public class PlayerController : MonoBehaviour
             _levelUIManager.UpdatePlayerCoins(LevelCoins);
             UpdatePlayerLevel();
         }
-        if (other.tag == "bullet")
+        if (other.CompareTag("bullet") || other.CompareTag("grenade"))
         {
-            TakeRangeDamage(_enemyController.Damage);
-        }
-        if (other.tag == "grenade")
-        {
-            TakeRangeDamage(_enemyGrenadeController.Damage);
+            TakeDamageFromEnemies();
         }
     }
     public void IncreaseDamage(int value)

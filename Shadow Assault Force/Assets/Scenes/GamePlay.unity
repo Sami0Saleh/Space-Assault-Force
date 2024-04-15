@@ -20616,6 +20616,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e16400c224be49f9b3093e2f593b35b, type: 3}
+--- !u!1 &778666954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778666955}
+  - component: {fileID: 778666956}
+  m_Layer: 0
+  m_Name: Enemy Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &778666955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778666954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 794428476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &778666956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778666954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe11cf1f209c44b4bbe219e084e6eaf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerController: {fileID: 1155928637}
+  _playerTransform: {fileID: 1155928639}
 --- !u!1001 &781510432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20918,6 +20964,7 @@ Transform:
   m_Children:
   - {fileID: 1230257671}
   - {fileID: 1512039791}
+  - {fileID: 778666955}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &796329896 stripped
@@ -29444,6 +29491,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ec16f774386f04fab436b5d41a69f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1155928639 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423853145752853801, guid: e653b382341fb7a4c8bc8d056f8ec998, type: 3}
+  m_PrefabInstance: {fileID: 4156374424719017842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1157828172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54562,10 +54614,6 @@ PrefabInstance:
     - target: {fileID: 934718771495294994, guid: dde1a20b8f00d7b46aa4586e60afcf5b, type: 3}
       propertyPath: m_Name
       value: DefaultMalePolyart
-      objectReference: {fileID: 0}
-    - target: {fileID: 934718771495294994, guid: dde1a20b8f00d7b46aa4586e60afcf5b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4928059470772907347, guid: dde1a20b8f00d7b46aa4586e60afcf5b, type: 3}
       propertyPath: m_LocalPosition.x
