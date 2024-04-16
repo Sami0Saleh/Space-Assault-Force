@@ -13,7 +13,7 @@ public class BigAnkleGrabber : MonoBehaviour, IEnemy
 
     [SerializeField] AudioSource _BiteSound;
 
-    private int _maxHp = 5;
+    private int _maxHp = 8;
     public int _currentHp;
     public int Damage = 5;
     public bool enemyIsDead = false;
@@ -60,7 +60,6 @@ public class BigAnkleGrabber : MonoBehaviour, IEnemy
             if (col.CompareTag("Player"))
             {
                 isPlayerDetected = true;
-               
                 break;
             }
         }

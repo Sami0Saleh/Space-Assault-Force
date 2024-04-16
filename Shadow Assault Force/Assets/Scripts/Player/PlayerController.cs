@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _assaultRifle;
     [SerializeField] PlayerWeapon _weapon;
     [SerializeField] LevelUIManager _levelUIManager;
+    [SerializeField] FloatingJoystick _joystick;
     //[SerializeField] UpgradeSpawner _upgradeSpawner;
     [SerializeField] NewUpgradeSpawner _newUpgradeSpawner;
     [SerializeField] LayerMask _enemyLayer;
@@ -31,7 +32,6 @@ public class PlayerController : MonoBehaviour
     public int CurrentHP;
     public int Damage = 2;
     private Vector3 _moveDirection;
-    private Vector3 originalForward;
     private Quaternion originalrotation;
     public int LevelCoins = 0;
     public int PlayerLevel = 1;
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     public int PlayerLevelMaxXP;
     private int _weaponIndex;
     public int Level = 0;
-    public static int EnemyCount = 1;
+    public static int EnemyCount = 3;
     public static bool IsplayerDead;
 
     private void Awake()
@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         IsplayerDead = false;
-        originalForward = transform.position;
         originalrotation = transform.rotation;
         _weaponIndex = 0;
         StartCoroutine(SwitchWeapons());
@@ -71,41 +70,50 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        
-        _moveDirection.x = (originalForward.x * horizontalInput);
-        _moveDirection.z = (originalForward.z * -verticalInput);
+        /* float horizontalInput = Input.GetAxis("Horizontal");
+         float verticalInput = Input.GetAxis("Vertical");
 
-        if (_moveDirection.magnitude > 0)
-        {
-            _moveDirection.Normalize();
-        }
-        // Move the player forward or backward
-        transform.Translate(_moveDirection * _moveSpeed * Time.deltaTime, Space.World);
+         _moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
-        // Update camera position to follow the player
-        if (_camTransform != null)
-        {
-            _camTransform.position = transform.position + CamPosition;
-        }
-        if (_moveDirection != Vector3.zero)
+         if (_moveDirection.magnitude > 0)
+         {
+             _moveDirection.Normalize();
+         }
+         if (_moveDirection != Vector3.zero)
+         {
+             _isMoving = true;
+             Quaternion targetRotation = Quaternion.LookRotation(_moveDirection);
+             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+             _anim.SetBool("isFWD", true);
+         }
+         else
+         {
+             _isMoving = false;
+             _anim.SetBool("isFWD", false);
+         }
+         Vector3 movement = _moveDirection * _moveSpeed * Time.deltaTime;
+         transform.Translate(movement, Space.World);*/
+
+        Vector3 inputDirection = new Vector3(_joystick.Horizontal, 0f, _joystick.Vertical);
+        if (inputDirection.magnitude > 0)
         {
             _isMoving = true;
-            if (_moveDirection == Vector3.forward)
-            {
-                _anim.SetBool("isFWD", true);
-            }
-            else
-            {
-                _anim.SetBool("isBWD", true);
-            }
+            Quaternion targetRotation = Quaternion.LookRotation(inputDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _rotationSpeed * Time.deltaTime);
+            _anim.SetBool("isFWD", true);
         }
         else
         {
             _isMoving = false;
             _anim.SetBool("isFWD", false);
-            _anim.SetBool("isBWD", false);
+        }
+
+        Vector3 movement = inputDirection * _moveSpeed * Time.deltaTime;
+        transform.Translate(movement, Space.World);
+        // Update camera position to follow the player
+        if (_camTransform != null)
+        {
+            _camTransform.position = transform.position + CamPosition;
         }
         if (_currentEnemy != null)
         {
@@ -115,12 +123,25 @@ public class PlayerController : MonoBehaviour
                 _weapon.StartShot();
                 _anim.SetBool("isShooting", true);
             }
+            else
+            {
+                _weapon.EndShot();
+                _anim.SetBool("isShooting", true);
+            }
         }
-        else
+        else if (_currentEnemy == null)
         {
-            transform.rotation = originalrotation;
-            _weapon.EndShot();
-            _anim.SetBool("isShooting", false);
+            if (_isMoving)
+            {
+                _weapon.EndShot();
+                _anim.SetBool("isShooting", false);
+            }
+            else
+            {
+                transform.rotation = originalrotation;
+                _weapon.EndShot();
+                _anim.SetBool("isShooting", false);
+            }
         }
         
         if (Input.GetKey(KeyCode.Alpha1))

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossGrabberController : MonoBehaviour, IEnemy
 {
-    [SerializeField] GameObject _littelAnkleGrabberPrefab;
+    [SerializeField] GameObject _BigAnkleGrabberPrefab;
     private Transform _playerTransform;
     private PlayerController _playerController;
     [SerializeField] Animator animator;
@@ -13,7 +13,7 @@ public class BossGrabberController : MonoBehaviour, IEnemy
 
     [SerializeField] AudioSource _BiteSound;
 
-    private int _maxHp = 5;
+    private int _maxHp = 15;
     public int _currentHp;
     public int Damage = 5;
     public bool enemyIsDead = false;
@@ -60,7 +60,6 @@ public class BossGrabberController : MonoBehaviour, IEnemy
             if (col.CompareTag("Player"))
             {
                 isPlayerDetected = true;
-                
                 break;
             }
         }
@@ -118,8 +117,8 @@ public class BossGrabberController : MonoBehaviour, IEnemy
     }
     void InstantiateNewEnemy()
     {
-        Instantiate(_littelAnkleGrabberPrefab, transform.position + Vector3.right * 0.2f, transform.rotation);
-        Instantiate(_littelAnkleGrabberPrefab, transform.position + Vector3.left * 0.2f, transform.rotation);
+        Instantiate(_BigAnkleGrabberPrefab, transform.position + Vector3.right * 0.2f, transform.rotation);
+        Instantiate(_BigAnkleGrabberPrefab, transform.position + Vector3.left * 0.2f, transform.rotation);
     }
     public void Die()
     {

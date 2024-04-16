@@ -1896,6 +1896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ec16f774386f04fab436b5d41a69f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CamPosition: {x: 0.02, y: 2.06, z: -1.39}
   _playerTransform: {fileID: 423853145752853801}
   _camTransform: {fileID: 0}
   _anim: {fileID: 9040091478902776488}
@@ -1903,18 +1904,18 @@ MonoBehaviour:
   _assaultRifle: {fileID: 1405952003040844178}
   _weapon: {fileID: 8738445379085100616}
   _levelUIManager: {fileID: 0}
-  _upgradeSpawner: {fileID: 0}
+  _newUpgradeSpawner: {fileID: 0}
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 8
   _detectionRangeCircle: {fileID: 8325612128049525083}
+  _detectionRange: 1.5
+  _moveSpeed: 1
+  _rotationSpeed: 2
+  _isMoving: 0
+  Coin: {fileID: 0}
   CurrentHP: 0
   Damage: 2
-  _detectionRange: 1.5
-  currentEnemy: 0
-  _moveSpeed: 1
-  _rotationSpeed: 30
-  _isMoving: 0
   LevelCoins: 0
   PlayerLevel: 1
   PlayerLevelXP: 0

@@ -58,7 +58,6 @@ public class LittelGrabberController : MonoBehaviour, IEnemy
             if (col.CompareTag("Player"))
             {
                 isPlayerDetected = true;
-               
                 break;
             }
         }

@@ -11,7 +11,7 @@ public class EnemyShooterController : MonoBehaviour, IEnemy
     [SerializeField] EnemyWeapon _enemyWeapon;
     [SerializeField] LayerMask obstacleLayer;
 
-    private int _maxHp = 5;
+    private int _maxHp = 7;
     public int _currentHp;
     public int Damage = 7;
     public bool enemyIsDead = false;

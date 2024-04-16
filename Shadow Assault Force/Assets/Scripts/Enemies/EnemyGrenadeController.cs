@@ -11,7 +11,7 @@ public class EnemyGrenadeController : MonoBehaviour, IEnemy
     [SerializeField] GameObject _droppableObjectPrefab;
     [SerializeField] LayerMask obstacleLayer;
 
-    private int _maxHp = 5;
+    private int _maxHp = 10;
     public int _currentHp;
     public int Damage = 7;
     public bool enemyIsDead = false;
