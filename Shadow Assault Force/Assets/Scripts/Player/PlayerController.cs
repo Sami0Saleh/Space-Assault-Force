@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 _weapon.EndShot();
-                _anim.SetBool("isShooting", true);
+                _anim.SetBool("isShooting", false);
             }
         }
         else if (_currentEnemy == null)
