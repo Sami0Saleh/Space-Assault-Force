@@ -110,11 +110,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6483222281551877279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f75b1bc16b273842ae2ffb9d550e6f7, type: 3}
+  m_Script: {fileID: 11500000, guid: ecf32cce1e1541c489592ef773c8902a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 2
-  _bulletSound: {fileID: 8934704550430988527}
 --- !u!136 &-3241770405127882002
 CapsuleCollider:
   m_ObjectHideFlags: 0

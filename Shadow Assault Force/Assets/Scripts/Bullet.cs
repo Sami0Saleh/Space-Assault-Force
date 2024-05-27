@@ -1,12 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float _speed;
-    [SerializeField] Rigidbody rb;
-
     void Update()
     {
-        rb.MovePosition(transform.forward * Time.deltaTime);
+        transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
     }
 }

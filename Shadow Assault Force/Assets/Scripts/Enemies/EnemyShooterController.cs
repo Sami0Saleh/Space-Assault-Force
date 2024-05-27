@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyShooterController : MonoBehaviour, IEnemy
 {
-    private Transform _playerTransform;
+    private Transform _payloadTransform;
     private PlayerController _playerController;
     [SerializeField] Animator animator;
     [SerializeField] GameObject _droppableObjectPrefab;
@@ -60,12 +60,12 @@ public class EnemyShooterController : MonoBehaviour, IEnemy
     public void MoveTowardsPlayer()
     {
         // Rotate towards the player
-        Vector3 direction = (_playerTransform.transform.position - transform.position).normalized;
+        Vector3 direction = (_payloadTransform.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
 
         // Move towards the player
-        float distanceToPlayer = Vector3.Distance(transform.position, _playerTransform.transform.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, _payloadTransform.transform.position);
         if (distanceToPlayer > attackRange)
         {
             // Check for obstacles in front of the enemy
@@ -76,7 +76,7 @@ public class EnemyShooterController : MonoBehaviour, IEnemy
         }
         else
         {
-            if (_playerTransform != null)
+            if (_payloadTransform != null)
             {
                 RangeAttackPlayer();
             }
@@ -144,6 +144,6 @@ public class EnemyShooterController : MonoBehaviour, IEnemy
 
     public void SetPlayerTransform(Transform playerTransform)
     {
-        _playerTransform = playerTransform;
+        _payloadTransform = playerTransform;
     }
 }
